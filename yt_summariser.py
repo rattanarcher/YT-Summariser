@@ -155,6 +155,7 @@ def download_audio(video_url: str, output_dir: str = AUDIO_DIR) -> str:
         "--audio-quality", "0",        # Best quality
         "-o", output_path,
         "--no-playlist",
+        "--remote-components", "ejs:github",  # Enable JS challenge solver
     ]
 
     # Add cookies if available (needed for GitHub Actions / cloud runners)
@@ -189,6 +190,7 @@ def get_video_metadata(video_url: str) -> dict:
         "--dump-json",
         "--no-download",
         "--no-playlist",
+        "--remote-components", "ejs:github",
     ]
 
     cookies_path = os.getenv("YT_DLP_COOKIES", "")
