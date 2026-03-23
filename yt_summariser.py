@@ -399,20 +399,23 @@ def format_transcript_with_timestamps(transcription: dict) -> str:
 # STEP 4: Generate AI Summary with Claude
 # ═══════════════════════════════════════════════════════════════════
 
-def generate_summary(transcript: str, video_title: str, channel_name: str) -> str:
+def generate_summary(transcript: str, video_title: str, channel_name: str) -> dict:
     """
-    Use Claude to generate a structured summary with timestamp references.
+    Use Claude to generate two outputs:
+      1. email_summary — detailed overview with highlight paragraphs (no timestamps)
+      2. detailed_analysis — key participants, timestamped points, quotes (for DOCX)
+    Returns dict with both keys.
     """
     try:
         import anthropic
     except ImportError:
         print("  ⚠  anthropic package not installed. Install with:")
         print("     pip install anthropic")
-        return ""
+        return {"email_summary": "", "detailed_analysis": ""}
 
     if not ANTHROPIC_API_KEY:
         print("  ⚠  ANTHROPIC_API_KEY not set.")
-        return ""
+        return {"email_summary": "", "detailed_analysis": ""}
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
@@ -420,13 +423,27 @@ def generate_summary(transcript: str, video_title: str, channel_name: str) -> st
         You are an expert analyst summarising Indonesian YouTube video content
         for a professional audience monitoring Indonesian political and business discourse.
 
-        Your task: Produce a clear, structured summary in ENGLISH of the video transcript.
+        Your task: Produce TWO separate outputs from the video transcript.
         The transcript is in Indonesian (Bahasa Indonesia). Translate and summarise into English.
 
-        FORMAT YOUR SUMMARY AS FOLLOWS:
+        ===== OUTPUT 1: EMAIL SUMMARY =====
+        This appears in a weekly email digest. It should be readable without timestamps.
 
         ## Overview
-        A 2-3 sentence overview of the video's main topic and significance.
+        A detailed 4-6 sentence overview of the video's main topic, who was involved,
+        and why it matters. Be specific about the subject matter and key conclusions.
+
+        ## Key Highlights
+        Write 2-3 substantial paragraphs (4-6 sentences each) that capture the most
+        important content from the video. Cover the major arguments, revelations, and
+        policy positions discussed. Write in flowing prose, not bullet points.
+        Do NOT include any timestamps in this section.
+
+        ## Implications
+        2-3 sentences on why this matters for Indonesian politics, business, or society.
+
+        ===== OUTPUT 2: DETAILED ANALYSIS =====
+        This goes into the transcript document for reference.
 
         ## Key Participants
         List the host and any guests, with brief context on who they are.
@@ -439,16 +456,13 @@ def generate_summary(transcript: str, video_title: str, channel_name: str) -> st
         ## Notable Quotes (translated)
         1-3 notable translated quotes with timestamps.
 
-        ## Analysis & Implications
-        2-3 sentences on why this matters for Indonesian politics/business/society.
-
-        RULES:
-        - Always include timestamps in [MM:SS] or [HH:MM:SS] format
-        - Reference the closest timestamp from the transcript
-        - Translate all Indonesian content into English
-        - Keep the summary concise but comprehensive (300-600 words)
-        - Maintain political neutrality — report what was said, not your opinion
-        - Flag any significant claims, allegations, or policy positions
+        ===== FORMATTING RULES =====
+        - Separate OUTPUT 1 and OUTPUT 2 with the exact line: ---SPLIT---
+        - OUTPUT 1 (email): NO timestamps anywhere. Write in prose paragraphs.
+        - OUTPUT 2 (analysis): Include timestamps in [MM:SS] or [HH:MM:SS] format.
+        - Translate all Indonesian content into English.
+        - Maintain political neutrality. Report what was said, not your opinion.
+        - Flag any significant claims, allegations, or policy positions.
     """).strip()
 
     user_prompt = f"""Summarise this video:
@@ -457,7 +471,7 @@ def generate_summary(transcript: str, video_title: str, channel_name: str) -> st
 **Channel:** {channel_name}
 
 **Timestamped Transcript:**
-{transcript[:80000]}"""  # Truncate if extremely long
+{transcript[:80000]}"""
 
     print(f"  🤖  Generating AI summary with Claude...")
 
@@ -468,7 +482,22 @@ def generate_summary(transcript: str, video_title: str, channel_name: str) -> st
         messages=[{"role": "user", "content": user_prompt}],
     )
 
-    return response.content[0].text
+    full_output = response.content[0].text
+
+    # Split into email summary and detailed analysis
+    if "---SPLIT---" in full_output:
+        parts = full_output.split("---SPLIT---", 1)
+        email_summary = parts[0].strip()
+        detailed_analysis = parts[1].strip()
+    else:
+        # Fallback: use entire output as email summary
+        email_summary = full_output
+        detailed_analysis = ""
+
+    return {
+        "email_summary": email_summary,
+        "detailed_analysis": detailed_analysis,
+    }
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -481,16 +510,24 @@ def create_transcript_docx(
     channel_name: str,
     video_url: str,
     output_path: str,
+    detailed_analysis: str = "",
 ):
-    """Create a formatted Word document of the full transcript."""
-    # Use Node.js docx library via subprocess
+    """Create a formatted Word document with detailed analysis + full transcript."""
+    # Write both content files for the JS script
+    with open("/tmp/transcript_content.txt", "w") as f:
+        f.write(transcript_text)
+    with open("/tmp/analysis_content.txt", "w") as f:
+        f.write(detailed_analysis)
+
     js_code = f"""
 const {{ Document, Packer, Paragraph, TextRun, HeadingLevel,
          AlignmentType, BorderStyle }} = require('docx');
 const fs = require('fs');
 
 const transcript = fs.readFileSync('/tmp/transcript_content.txt', 'utf8');
-const lines = transcript.split('\\n\\n');
+const analysis = fs.readFileSync('/tmp/analysis_content.txt', 'utf8');
+const transcriptLines = transcript.split('\\n\\n');
+const analysisLines = analysis.split('\\n');
 
 const children = [
     new Paragraph({{
@@ -523,14 +560,64 @@ const children = [
         border: {{ bottom: {{ style: BorderStyle.SINGLE, size: 6, color: "CCCCCC" }} }},
         children: []
     }}),
-    new Paragraph({{
-        heading: HeadingLevel.HEADING_2,
-        spacing: {{ before: 200, after: 120 }},
-        children: [new TextRun({{ text: "Full Transcript", bold: true, font: "Arial", size: 28 }})]
-    }}),
 ];
 
-for (const line of lines) {{
+// ─── Detailed Analysis Section ───────────────────────────
+if (analysis.trim()) {{
+    children.push(new Paragraph({{
+        heading: HeadingLevel.HEADING_2,
+        spacing: {{ before: 200, after: 120 }},
+        children: [new TextRun({{ text: "Detailed Analysis", bold: true, font: "Arial", size: 28 }})]
+    }}));
+
+    for (const line of analysisLines) {{
+        if (!line.trim()) continue;
+
+        // Detect markdown headers (## Key Participants, etc.)
+        const h2Match = line.match(/^##\\s+(.*)/);
+        if (h2Match) {{
+            children.push(new Paragraph({{
+                spacing: {{ before: 200, after: 80 }},
+                children: [new TextRun({{ text: h2Match[1], bold: true, font: "Arial", size: 24, color: "2E75B6" }})]
+            }}));
+            continue;
+        }}
+
+        // Detect bullet points with timestamps
+        const bulletMatch = line.match(/^-\\s*\\[(\\d{{2}}:\\d{{2}}(?::\\d{{2}})?)\\]\\s*(.*)/);
+        if (bulletMatch) {{
+            children.push(new Paragraph({{
+                spacing: {{ before: 60, after: 40 }},
+                children: [
+                    new TextRun({{ text: "[" + bulletMatch[1] + "] ", bold: true, font: "Arial", size: 22, color: "2E75B6" }}),
+                    new TextRun({{ text: bulletMatch[2], font: "Arial", size: 22 }}),
+                ]
+            }}));
+            continue;
+        }}
+
+        // Regular text
+        children.push(new Paragraph({{
+            spacing: {{ after: 60 }},
+            children: [new TextRun({{ text: line, font: "Arial", size: 22 }})]
+        }}));
+    }}
+
+    children.push(new Paragraph({{
+        spacing: {{ after: 200 }},
+        border: {{ bottom: {{ style: BorderStyle.SINGLE, size: 6, color: "CCCCCC" }} }},
+        children: []
+    }}));
+}}
+
+// ─── Full Transcript Section ─────────────────────────────
+children.push(new Paragraph({{
+    heading: HeadingLevel.HEADING_2,
+    spacing: {{ before: 200, after: 120 }},
+    children: [new TextRun({{ text: "Full Transcript", bold: true, font: "Arial", size: 28 }})]
+}}));
+
+for (const line of transcriptLines) {{
     if (!line.trim()) continue;
     const tsMatch = line.match(/^\\[(\\d{{2}}:\\d{{2}}(?::\\d{{2}})?)\\]\\s*(.*)/s);
     if (tsMatch) {{
@@ -569,10 +656,6 @@ Packer.toBuffer(doc).then(buffer => {{
     console.log("DOCX created: " + {json.dumps(output_path)});
 }});
 """
-
-    # Write transcript content to temp file (avoids shell escaping issues)
-    with open("/tmp/transcript_content.txt", "w") as f:
-        f.write(transcript_text)
 
     with open("/tmp/create_transcript.js", "w") as f:
         f.write(js_code)
@@ -772,21 +855,25 @@ def process_video(video_url: str, channel_name: str = "", language: str = "id") 
 
     # 5. Generate summary
     print("\n  STEP 5: Generating AI summary...")
-    summary = generate_summary(formatted_transcript, title, channel)
-    print(f"  ✓  Summary generated ({len(summary)} chars)")
+    summary_result = generate_summary(formatted_transcript, title, channel)
+    email_summary = summary_result.get("email_summary", "")
+    detailed_analysis = summary_result.get("detailed_analysis", "")
+    print(f"  ✓  Summary generated (email: {len(email_summary)} chars, analysis: {len(detailed_analysis)} chars)")
 
-    # 6. Save transcript DOCX
+    # 6. Save transcript DOCX (now includes detailed analysis)
     print("\n  STEP 6: Creating transcript document...")
     safe_title = re.sub(r'[^\w\s-]', '', title)[:60].strip()
     docx_filename = f"Transcript_{safe_title}_{video_id}.docx"
     docx_path = os.path.join(TRANSCRIPTS_DIR, docx_filename)
-    create_transcript_docx(formatted_transcript, title, channel, video_url, docx_path)
+    create_transcript_docx(formatted_transcript, title, channel, video_url, docx_path, detailed_analysis)
     print(f"  ✓  Transcript saved: {docx_path}")
 
     # Save summary as text too
     summary_path = os.path.join(SUMMARIES_DIR, f"Summary_{video_id}.md")
     with open(summary_path, "w") as f:
-        f.write(f"# {title}\n**Channel:** {channel}\n**URL:** {video_url}\n\n{summary}")
+        f.write(f"# {title}\n**Channel:** {channel}\n**URL:** {video_url}\n\n")
+        f.write(f"## Email Summary\n{email_summary}\n\n")
+        f.write(f"## Detailed Analysis\n{detailed_analysis}\n")
     print(f"  ✓  Summary saved: {summary_path}")
 
     return {
@@ -795,7 +882,7 @@ def process_video(video_url: str, channel_name: str = "", language: str = "id") 
         "channel": channel,
         "url": video_url,
         "published_at": published,
-        "summary": summary,
+        "summary": email_summary,
         "transcript_path": docx_path,
         "summary_path": summary_path,
     }
@@ -829,7 +916,14 @@ def weekly_scan():
         if not videos:
             videos = get_recent_videos_ytdlp(channel["handle"], days=7)
 
-        print(f"  Found {len(videos)} new video(s)")
+        # Apply title filter if configured (e.g. "Bocor Alus" on Tempodotco)
+        title_filter = channel.get("title_filter", "")
+        if title_filter:
+            before_count = len(videos)
+            videos = [v for v in videos if title_filter.lower() in v.get("title", "").lower()]
+            print(f"  Found {before_count} video(s), {len(videos)} matching '{title_filter}'")
+        else:
+            print(f"  Found {len(videos)} new video(s)")
 
         for video in videos:
             try:

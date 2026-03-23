@@ -21,11 +21,12 @@ CHANNELS = [
         "description": "Political podcast by Akbar Faizal. Uncensored interviews.",
     },
     {
-        "name": "Prof. Rhenald Kasali",
-        "handle": "@rhenald_kasali",
-        "channel_id": "UCCdDIIETGvAR9EtNF2aP34w",
+        "name": "Bocor Alus Politik (Tempo)",
+        "handle": "@Tempodotco",
+        "channel_id": "UC3QRoNY-nYDTNSv-1dR0P-g",
         "language": "id",
-        "description": "Business & management insights by Prof. Rhenald Kasali.",
+        "description": "Political podcast by Tempo journalists. Hosted on the Tempodotco channel.",
+        "title_filter": "Bocor Alus",  # Only process videos with this in the title
     },
 ]
 
@@ -48,8 +49,8 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 
 # ─── Schedule ──────────────────────────────────────────────────────
-# Cron: Every Monday at 7:00 AM AEST (= Sunday 21:00 UTC)
-SCHEDULE_CRON = "0 21 * * 0"  # UTC equivalent of Monday 7 AM AEST
+# Cron: Every Monday at 7:00 AM AEST (= Sunday 20:00 UTC)
+SCHEDULE_CRON = "0 20 * * 0"  # UTC equivalent of Monday 7 AM AEST
 SCHEDULE_TIMEZONE = "Australia/Sydney"
 SCHEDULE_DAY = "monday"
 SCHEDULE_TIME = "07:00"  # AEST
@@ -69,4 +70,4 @@ WHISPER_MODEL = "large-v3"  # Best for Indonesian language
 
 # ─── Claude Config ─────────────────────────────────────────────────
 CLAUDE_MODEL = "claude-sonnet-4-20250514"
-MAX_TOKENS = 4096
+MAX_TOKENS = 8192
