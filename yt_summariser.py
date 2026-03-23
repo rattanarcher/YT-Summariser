@@ -155,8 +155,14 @@ def download_audio(video_url: str, output_dir: str = AUDIO_DIR) -> str:
         "--audio-quality", "0",        # Best quality
         "-o", output_path,
         "--no-playlist",
-        video_url,
     ]
+
+    # Add cookies if available (needed for GitHub Actions / cloud runners)
+    cookies_path = os.getenv("YT_DLP_COOKIES", "")
+    if cookies_path and os.path.exists(cookies_path):
+        cmd.extend(["--cookies", cookies_path])
+
+    cmd.append(video_url)
 
     print(f"  ↓  Downloading audio from {video_url}...")
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
@@ -183,8 +189,14 @@ def get_video_metadata(video_url: str) -> dict:
         "--dump-json",
         "--no-download",
         "--no-playlist",
-        video_url,
     ]
+
+    cookies_path = os.getenv("YT_DLP_COOKIES", "")
+    if cookies_path and os.path.exists(cookies_path):
+        cmd.extend(["--cookies", cookies_path])
+
+    cmd.append(video_url)
+
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
     if result.returncode == 0:
         return json.loads(result.stdout)

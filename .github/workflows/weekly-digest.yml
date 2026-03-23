@@ -12,26 +12,19 @@
 #   EMAIL_SENDER         — Gmail address
 #   GMAIL_APP_PASSWORD   — Gmail App Password
 #   EMAIL_RECIPIENTS     — Comma-separated recipient list
+#
+# Optional GitHub Secrets:
+#   YOUTUBE_COOKIES      — Netscape-format cookies for YouTube auth
+#                          (needed if YouTube blocks the runner)
 # ═══════════════════════════════════════════════════════════════════
 
 name: Weekly YouTube Digest
 
 on:
   schedule:
-    # ┌───── minute (0)
-    # │ ┌───── hour (21 UTC = 07:00 AEST, accounting for AEDT/AEST)
-    # │ │ ┌───── day of month (*)
-    # │ │ │ ┌───── month (*)
-    # │ │ │ │ ┌───── day of week (0 = Sunday)
-    # │ │ │ │ │
     - cron: "0 21 * * 0"
-    # NOTE: GitHub Actions cron uses UTC.
-    #   AEST (UTC+10): Sunday 21:00 UTC = Monday 07:00 AEST
-    #   AEDT (UTC+11): Use "0 20 * * 0" during daylight saving (Oct–Apr)
-    #   Current setting targets AEST. Adjust if DST precision matters.
 
   workflow_dispatch:
-    # Manual trigger — lets you run it on-demand from the Actions tab
     inputs:
       single_url:
         description: "Optional: process a single video URL instead of weekly scan"
@@ -41,7 +34,7 @@ on:
 jobs:
   weekly-digest:
     runs-on: ubuntu-latest
-    timeout-minutes: 120   # Long videos can take time to process
+    timeout-minutes: 120
 
     steps:
       # ─── 1. Checkout repo ──────────────────────────────────────
@@ -61,23 +54,42 @@ jobs:
         with:
           node-version: "20"
 
-      # ─── 4. Install system dependencies ────────────────────────
+      # ─── 4. Install Deno (required by yt-dlp for YouTube) ─────
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      # ─── 5. Install system dependencies ────────────────────────
       - name: Install ffmpeg
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
 
-      # ─── 5. Install Python dependencies ────────────────────────
+      # ─── 6. Install Python dependencies ────────────────────────
       - name: Install Python packages
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      # ─── 6. Install Node.js dependencies ───────────────────────
+      # ─── 7. Install Node.js dependencies ───────────────────────
       - name: Install docx (Node.js)
         run: npm install -g docx
 
-      # ─── 7. Run the summariser ─────────────────────────────────
+      # ─── 8. Set up YouTube cookies (if provided) ──────────────
+      - name: Set up YouTube cookies
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: |
+          if [ -n "$YOUTUBE_COOKIES" ]; then
+            echo "$YOUTUBE_COOKIES" > /tmp/youtube_cookies.txt
+            echo "YT_DLP_COOKIES=/tmp/youtube_cookies.txt" >> $GITHUB_ENV
+            echo "Cookies file created."
+          else
+            echo "No cookies provided — will attempt without auth."
+          fi
+
+      # ─── 9. Run the summariser ─────────────────────────────────
       - name: Run weekly scan
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
@@ -86,7 +98,7 @@ jobs:
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
-          USE_WHISPER_API: "true"   # Use OpenAI API (no GPU on Actions runners)
+          USE_WHISPER_API: "true"
         run: |
           if [ -n "${{ inputs.single_url }}" ]; then
             echo "Processing single video: ${{ inputs.single_url }}"
@@ -96,7 +108,7 @@ jobs:
             python yt_summariser.py --scan
           fi
 
-      # ─── 8. Upload outputs as artifacts ────────────────────────
+      # ─── 10. Upload outputs as artifacts ───────────────────────
       - name: Upload transcripts and summaries
         if: always()
         uses: actions/upload-artifact@v4
@@ -107,7 +119,7 @@ jobs:
             output/summaries/
           retention-days: 90
 
-      # ─── 9. Commit summaries back to repo (optional) ───────────
+      # ─── 11. Commit summaries back to repo ─────────────────────
       - name: Commit summaries to repo
         if: success()
         run: |
