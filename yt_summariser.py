@@ -241,16 +241,86 @@ def transcribe_audio(audio_path: str, language: str = "id") -> dict:
 
 def transcribe_audio_api(audio_path: str, language: str = "id") -> dict:
     """
-    Alternative: Use OpenAI Whisper API for transcription.
+    Use OpenAI Whisper API for transcription.
+    Automatically splits files larger than 24 MB into chunks.
     Requires OPENAI_API_KEY environment variable.
-    Faster than local model, especially for long videos.
     """
     import openai
 
     client = openai.OpenAI()
+    max_size = 24 * 1024 * 1024  # 24 MB (leave margin under 25 MB limit)
+    file_size = os.path.getsize(audio_path)
 
-    print(f"  🎙  Transcribing via Whisper API...")
+    if file_size <= max_size:
+        # Small enough — transcribe directly
+        print(f"  🎙  Transcribing via Whisper API ({file_size / 1024 / 1024:.1f} MB)...")
+        return _transcribe_single_file(client, audio_path, language)
 
+    # File too large — split into chunks using ffmpeg
+    print(f"  🎙  File is {file_size / 1024 / 1024:.1f} MB (over 24 MB limit). Splitting into chunks...")
+    chunk_dir = os.path.join(os.path.dirname(audio_path), "chunks")
+    os.makedirs(chunk_dir, exist_ok=True)
+
+    base_name = os.path.splitext(os.path.basename(audio_path))[0]
+    chunk_pattern = os.path.join(chunk_dir, f"{base_name}_chunk_%03d.mp3")
+
+    # Split into 10-minute chunks
+    split_cmd = [
+        "ffmpeg", "-y", "-i", audio_path,
+        "-f", "segment",
+        "-segment_time", "600",  # 10 minutes per chunk
+        "-c", "copy",
+        chunk_pattern,
+    ]
+    subprocess.run(split_cmd, capture_output=True, text=True, timeout=300)
+
+    # Find all chunks and sort them
+    import glob
+    chunks = sorted(glob.glob(os.path.join(chunk_dir, f"{base_name}_chunk_*.mp3")))
+    print(f"  📦  Split into {len(chunks)} chunks")
+
+    # Transcribe each chunk and merge results
+    all_segments = []
+    all_text = []
+    time_offset = 0.0
+
+    for i, chunk_path in enumerate(chunks):
+        print(f"  🎙  Transcribing chunk {i + 1}/{len(chunks)}...")
+        chunk_result = _transcribe_single_file(client, chunk_path, language)
+
+        all_text.append(chunk_result.get("text", ""))
+        for seg in chunk_result.get("segments", []):
+            all_segments.append({
+                "start": seg["start"] + time_offset,
+                "end": seg["end"] + time_offset,
+                "text": seg["text"],
+            })
+
+        # Get duration of this chunk for offset calculation
+        probe_cmd = [
+            "ffprobe", "-v", "quiet",
+            "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1",
+            chunk_path,
+        ]
+        probe_result = subprocess.run(probe_cmd, capture_output=True, text=True, timeout=30)
+        try:
+            time_offset += float(probe_result.stdout.strip())
+        except ValueError:
+            time_offset += 600.0  # fallback: assume 10 minutes
+
+    # Clean up chunks
+    for chunk_path in chunks:
+        os.remove(chunk_path)
+
+    return {
+        "text": " ".join(all_text),
+        "segments": all_segments,
+    }
+
+
+def _transcribe_single_file(client, audio_path: str, language: str) -> dict:
+    """Transcribe a single audio file via OpenAI Whisper API."""
     with open(audio_path, "rb") as audio_file:
         result = client.audio.transcriptions.create(
             model="whisper-1",
