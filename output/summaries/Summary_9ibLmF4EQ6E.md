@@ -1,47 +1,52 @@
 # Presiden Prabowo Menjawab (PART 1): Serangan Aktivis, BOP, MBG, dan Dampak Perang | Mata Najwa
 **Channel:** Najwa Shihab
-**URL:** https://www.youtube.com/watch?v=9ibLmF4EQ6E&t=3973s
+**URL:** https://www.youtube.com/watch?v=9ibLmF4EQ6E
 
 ## Overview
-This is Part 1 of President Prabowo's second public Q&A session ("Presiden Prabowo Menjawab") hosted by Najwa Shihab, featuring expert panelists discussing critical national issues including food security, industrial policy, governance transparency, and Indonesia's role in Middle East peace efforts.
+This is the first part of President Prabowo's second "Presiden Prabowo Menjawab" (President Prabowo Answers) session, a roundtable discussion with six experts covering critical issues from geopolitics and war impacts to domestic challenges like food security, economic policy, and press freedom.
 
 ## Key Participants
-- **Host**: Najwa Shihab (journalist, Melbourne Law School graduate)
-- **Panelists**: Retno Pinasti (Liputan 6 editor), Rizal Malarangeng (Ohio State alumnus), Bosman Mardiguowi (forensic psychology expert), Muhammad Faisal (CORE economist), Dede Katib Basri (former Finance Minister, Harvard scholar)
-- **President Prabowo Subianto**
+**Host:** Najwa Shihab (journalist, Melbourne Law School graduate)
+**Guest:** President Prabowo Subianto
+**Expert Panel:**
+- Retno Pinasti (journalist, Voice of America/Liputan 6)
+- Rizal Malarangeng (Indonesian scholar from Ohio State University)  
+- Bosman Mardiguowi (criminal psychology expert, San Francisco State)
+- Muhammad Faisal (Director, Center of Reform on Economics Indonesia)
+- Dede Katib Basri (former Finance Minister, Harvard fellow)
 
 ## Key Points & Timestamps
 
-- **[07:18]** Prabowo explains his "common sense" approach to food and energy security, rooted in studying history and understanding that food is humanity's most basic need, citing Maslow's hierarchy and historical conflicts over resources.
+- **[06:46]** Prabowo explains his 20+ year focus on food and energy security stems from "common sense and reality" - understanding that food is humanity's most basic need and that conflicts throughout history have originated from competition over resources.
 
-- **[11:09]** President acknowledges that wars anywhere now affect global food prices, citing Ukraine's impact on grain and corn supplies, emphasizing Indonesia's vulnerability in an interconnected world.
+- **[11:29]** On predicting wars: Prabowo cites human nature's tendency toward dominance, referencing Thucydides' maxim "the strong will do what they can, the weak suffer what they must" and the principle "if you want peace, prepare for war."
 
-- **[17:16]** Prabowo describes his sleep strategy - able to sleep anywhere for 15-30 minutes between meetings, waking at 3 AM to monitor global news via YouTube to stay current with international developments.
+- **[26:24]** Addressing false reports: Prabowo warns against "ABS culture" (Asal Bapak Senang - "as long as the boss is happy") and fake reporting, emphasizing the need for accurate information even if unpleasant.
 
-- **[25:24]** Retno Pinasti questions President about his recent warning against "false reports" and "pleasing reports," asking about cross-checking mechanisms and who serves as his "devil's advocate."
+- **[31:25]** On MBG (Makan Bergizi Gratis) program criticism: Over 1,030 kitchens have been suspended/closed, with new certification requirements for hygiene and food safety being implemented.
 
-- **[30:45]** President responds on combating Indonesia's "ABS culture" (Asal Bapak Senang - "as long as the boss is happy"), emphasizing need for accurate reporting even when uncomfortable, citing examples from his military experience.
+- **[45:51]** Economic concerns: Dede Basri highlights shrinking middle class and rising educated unemployment (80% of new jobs are informal, paying ~$120/month), warning of potential social unrest.
 
-- **[32:29]** Reveals over 1,030 MBG (free meal program) kitchens have been suspended due to hygiene and safety violations, with new certification requirements being implemented.
+- **[47:25]** Prabowo's industrialization vision: Emphasizes "transformation, not just development" through downstream processing of raw materials, citing plans for hundreds of factories and complete supply chains.
 
-- **[47:25]** On economic transformation: "I don't talk about nation building anymore, I talk about nation transformation" - emphasizing industrialization over raw material exports, planning hundreds of factories under an "Industrial Tree" strategy.
+- **[52:13]** Healthcare shortage: Indonesia lacks 120,000-140,000 doctors, graduating only 9,000-10,000 annually. Plans for 10 new universities with medical schools and research hospitals.
 
-- **[52:13]** Addresses healthcare worker shortage: Indonesia lacks 140,000 doctors, graduating only 9,000-10,000 annually, announcing plans for 10 new universities with medical schools and research hospitals.
+- **[53:15]** Bureaucratic reform: Found 145 overlapping regulations for fertilizer distribution alone, streamlined to direct factory-to-farmer distribution.
 
-- **[53:15]** Deregulation example: Found 145 different regulations governing fertilizer distribution from factory to farmers, streamlined to direct distribution to farmer groups using just ID cards.
+- **[59:24]** War's economic impact: Oil prices above $80/barrel and rupiah at 17,000 per USD could increase energy subsidies by over 100 trillion rupiah (3% of GDP).
 
-- **[01:16:53]** On activist Andri Yunus acid attack: "This is terrorism. Barbaric action. We must pursue and investigate... even if it turns out state apparatus did this." Guarantees no impunity for perpetrators.
+- **[01:17:03]** Activist attack response: Firmly condemns acid attack on Kontras activist Andri Yunus as "terrorism" and "barbaric," promising full investigation regardless of perpetrator's identity.
 
-- **[01:29:46]** Explains Indonesia's role in Board of Peace (BOP): Participated in Trump's 21-point plan for Gaza, helped secure ceasefire, but announces all involvement "on hold" following renewed conflict escalation.
+- **[01:29:38]** Board of Peace (BOP) explanation: Details Indonesia's involvement in Gaza peace efforts, including Trump's 21-point plan and UN Security Council Resolution 2803, but announces suspension due to renewed conflict.
 
 ## Notable Quotes (translated)
 
-1. **[12:31]** "The strong will do what they can, the weak suffer what they must. That has become a kind of adage. Natural law for 2,500 years."
+1. **[07:18]** "I always think by seeking the basics, seeking the essence of problems. The essence of statehood, the essence of civilized life, human civilization."
 
-2. **[01:20:32]** "I want to build a civilized Indonesia. That's my aspiration. I want to build a clean government. I want clean police, clean prosecutors, clean intelligence."
+2. **[01:17:35]** "This is terrorism. Barbaric action. We must pursue it, we must investigate it... including if it turns out those who did it were state apparatus."
 
-3. **[01:27:40]** "I swear to defend my people. I have risked my life many times. I will not allow this country to fall into the hands of thieves and bandits when I am called by God."
+3. **[01:20:46]** "I want to build a civilized Indonesia. That's my aspiration. I want to build a clean government, I want clean police, clean prosecutors, clean intelligence."
 
 ## Analysis & Implications
 
-This extended dialogue reveals Prabowo's governance philosophy combining nationalist economic policies with pragmatic international engagement. His emphasis on food and energy security, accelerated by current global conflicts, positions Indonesia toward greater self-sufficiency through industrialization. The President's direct acknowledgment of corruption and inefficiency within government institutions, combined with his firm stance against intimidation of critics, suggests a reformist approach while maintaining strong executive authority. His nuanced position on the Gaza conflict and BOP participation demonstrates Indonesia's complex balancing act between moral leadership in the Muslim world and practical diplomatic constraints.
+This comprehensive discussion reveals Prabowo's approach to multiple crises facing Indonesia - from economic pressures due to global conflicts to domestic governance challenges. His emphasis on food/energy security as national security priorities, coupled with aggressive bureaucratic reform and industrialization plans, suggests a nationalist-populist governing philosophy. The frank discussion of activist intimidation and his strong condemnation may help address growing concerns about democratic space, while his detailed explanation of the Board of Peace decision demonstrates the complexities of Indonesia's middle-power diplomacy in an increasingly polarized Middle East.
