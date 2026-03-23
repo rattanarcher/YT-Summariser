@@ -8,7 +8,7 @@ Automated pipeline that monitors Indonesian YouTube channels, transcribes video 
 |---------|--------|-------|
 | **Najwa Shihab** | @najwashihab | News & politics (Mata Najwa) |
 | **Akbar Faizal Uncensored** | @akbarfaizaluncensored | Political podcast interviews |
-| **Prof. Rhenald Kasali** | @rhenald_kasali | Business & management insights |
+| **Bocor Alus Politik** | @Tempodotco | Political podcast by Tempo journalists (filtered from Tempodotco channel) |
 
 ## Architecture
 
