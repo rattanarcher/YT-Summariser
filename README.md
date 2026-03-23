@@ -136,22 +136,16 @@ crontab -e
 
 ### Email Digest (HTML)
 - Grouped by channel
-- Each video: title, publish date, structured summary with timestamp references
-- Timestamps link to approximate positions in the video
-- Attached: full .docx transcripts for each video
+- Each video: title, publish date, and a prose summary with no timestamps
+- **Overview**: 4-6 sentence detailed synopsis of the video's topic and participants
+- **Key Highlights**: 2-3 paragraphs capturing the most important content, arguments, and policy positions
+- **Implications**: Brief note on why it matters
+- Attached: .docx transcript documents for each video
 
-### Summary Structure
-Each video summary contains:
-1. **Overview** — 2-3 sentence synopsis
-2. **Key Participants** — Host and guests with context
-3. **Key Points & Timestamps** — 5-12 major points with [MM:SS] references
-4. **Notable Quotes** — 1-3 translated quotes
-5. **Analysis & Implications** — Why it matters
-
-### Transcript DOCX
-- Full timestamped transcript in original Indonesian
-- 30-second timestamp blocks
-- Formatted Word document with metadata header
+### Transcript Document (.docx)
+Each attached Word document contains two sections:
+1. **Detailed Analysis** — Key participants with context, timestamped key points ([MM:SS] references to the video), and notable translated quotes
+2. **Full Transcript** — Complete timestamped transcript in original Indonesian, grouped into 30-second blocks
 
 ## File Structure
 ```
