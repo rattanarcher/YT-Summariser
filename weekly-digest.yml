@@ -1,0 +1,130 @@
+# ═══════════════════════════════════════════════════════════════════
+# Indonesian YouTube Channel Monitor — Weekly Digest
+# ═══════════════════════════════════════════════════════════════════
+#
+# Runs every Monday at 7:00 AM AEST (Sunday 21:00 UTC)
+# Also supports manual trigger from the Actions tab.
+#
+# Required GitHub Secrets (Settings → Secrets and variables → Actions):
+#   YOUTUBE_API_KEY      — YouTube Data API v3
+#   ANTHROPIC_API_KEY    — Anthropic (Claude) API
+#   OPENAI_API_KEY       — OpenAI (Whisper API for transcription)
+#   EMAIL_SENDER         — Gmail address
+#   GMAIL_APP_PASSWORD   — Gmail App Password
+#   EMAIL_RECIPIENTS     — Comma-separated recipient list
+#
+# Optional GitHub Secrets:
+#   YOUTUBE_COOKIES      — Netscape-format cookies for YouTube auth
+#                          (needed if YouTube blocks the runner)
+# ═══════════════════════════════════════════════════════════════════
+
+name: Weekly YouTube Digest
+
+on:
+  schedule:
+    - cron: "0 21 * * 0"
+
+  workflow_dispatch:
+    inputs:
+      single_url:
+        description: "Optional: process a single video URL instead of weekly scan"
+        required: false
+        type: string
+
+jobs:
+  weekly-digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      # ─── 1. Checkout repo ──────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ─── 2. Set up Python ─────────────────────────────────────
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      # ─── 3. Set up Node.js (for DOCX generation) ──────────────
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # ─── 4. Install Deno (required by yt-dlp for YouTube) ─────
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      # ─── 5. Install system dependencies ────────────────────────
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      # ─── 6. Install Python dependencies ────────────────────────
+      - name: Install Python packages
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ─── 7. Install Node.js dependencies ───────────────────────
+      - name: Install docx (Node.js)
+        run: npm install docx
+
+      # ─── 8. Set up YouTube cookies (if provided) ──────────────
+      - name: Set up YouTube cookies
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: |
+          if [ -n "$YOUTUBE_COOKIES" ]; then
+            echo "$YOUTUBE_COOKIES" > /tmp/youtube_cookies.txt
+            echo "YT_DLP_COOKIES=/tmp/youtube_cookies.txt" >> $GITHUB_ENV
+            echo "Cookies file created."
+          else
+            echo "No cookies provided — will attempt without auth."
+          fi
+
+      # ─── 9. Run the summariser ─────────────────────────────────
+      - name: Run weekly scan
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
+          USE_WHISPER_API: "true"
+        run: |
+          if [ -n "${{ inputs.single_url }}" ]; then
+            echo "Processing single video: ${{ inputs.single_url }}"
+            python yt_summariser.py --url "${{ inputs.single_url }}"
+          else
+            echo "Running weekly channel scan..."
+            python yt_summariser.py --scan
+          fi
+
+      # ─── 10. Upload outputs as artifacts ───────────────────────
+      - name: Upload transcripts and summaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-digest-${{ github.run_number }}
+          path: |
+            output/transcripts/
+            output/summaries/
+          retention-days: 90
+
+      # ─── 11. Commit summaries back to repo ─────────────────────
+      - name: Commit summaries to repo
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/summaries/ || true
+          git diff --cached --quiet || git commit -m "Weekly digest: $(date -u +'%Y-%m-%d')"
+          git push || echo "Nothing to push"

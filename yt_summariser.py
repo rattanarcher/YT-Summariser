@@ -577,7 +577,28 @@ Packer.toBuffer(doc).then(buffer => {{
     with open("/tmp/create_transcript.js", "w") as f:
         f.write(js_code)
 
-    result = subprocess.run(["node", "/tmp/create_transcript.js"], capture_output=True, text=True)
+    # Look for node_modules in the working directory (where npm install runs)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    local_node_modules = os.path.join(script_dir, "node_modules")
+
+    node_env = {**os.environ}
+    # Try local node_modules first, then fall back to global
+    node_paths = []
+    if os.path.isdir(local_node_modules):
+        node_paths.append(local_node_modules)
+    # Also check global
+    global_result = subprocess.run(["npm", "root", "-g"], capture_output=True, text=True)
+    if global_result.returncode == 0 and global_result.stdout.strip():
+        node_paths.append(global_result.stdout.strip())
+    if node_paths:
+        node_env["NODE_PATH"] = os.pathsep.join(node_paths)
+
+    result = subprocess.run(
+        ["node", "/tmp/create_transcript.js"],
+        capture_output=True,
+        text=True,
+        env=node_env,
+    )
     if result.returncode != 0:
         print(f"  ⚠  DOCX creation failed: {result.stderr}")
     return output_path
@@ -910,6 +931,20 @@ def main():
     if args.url:
         result = process_video(args.url)
         print(f"\n  Summary:\n{'─' * 40}\n{result['summary']}")
+        # Send email if email credentials are configured
+        from config import EMAIL_PASSWORD
+        if EMAIL_PASSWORD:
+            try:
+                print(f"\n  Sending email with results...")
+                transcript_paths = []
+                tp = result.get("transcript_path", "")
+                if tp and os.path.exists(tp):
+                    transcript_paths.append(tp)
+                send_weekly_email([result], transcript_paths)
+            except Exception as e:
+                print(f"\n  ⚠  Email failed: {e}")
+        else:
+            print(f"\n  ⚠  GMAIL_APP_PASSWORD not set — skipping email.")
     elif args.scan:
         weekly_scan()
     elif args.daemon:
