@@ -708,8 +708,9 @@ def send_weekly_email(summaries: list[dict], transcript_paths: list[str]):
 
     # Build email
     now = datetime.now()
-    week_start = (now - timedelta(days=now.weekday() + 7)).strftime("%d %b")
-    week_end = (now - timedelta(days=now.weekday() + 1)).strftime("%d %b %Y")
+    # The digest covers the 7 days before the email is sent
+    week_end = (now - timedelta(days=1)).strftime("%d %b %Y")
+    week_start = (now - timedelta(days=7)).strftime("%d %b")
     subject = f"🇮🇩 Indonesian YouTube Weekly Digest — {week_start} – {week_end}"
 
     msg = MIMEMultipart("mixed")
@@ -913,8 +914,37 @@ def weekly_scan():
 
         # Try API first, fall back to yt-dlp
         videos = get_recent_videos(channel["channel_id"], days=7)
-        if not videos:
+        if videos:
+            print(f"  📡  Discovery via YouTube API")
+        else:
+            print(f"  📡  API returned nothing, falling back to yt-dlp...")
             videos = get_recent_videos_ytdlp(channel["handle"], days=7)
+            if videos:
+                print(f"  📡  Discovery via yt-dlp")
+
+        # Validate: filter out videos older than 7 days (safety net)
+        cutoff_date = datetime.now(timezone.utc) - timedelta(days=7)
+        validated_videos = []
+        for v in videos:
+            pub = v.get("published_at", "")
+            try:
+                # Handle both ISO format (API) and YYYYMMDD (yt-dlp)
+                if "T" in str(pub):
+                    pub_dt = datetime.fromisoformat(str(pub).replace("Z", "+00:00"))
+                elif len(str(pub)) == 8:
+                    pub_dt = datetime(int(pub[:4]), int(pub[4:6]), int(pub[6:8]), tzinfo=timezone.utc)
+                else:
+                    # Cannot parse date, include video to be safe
+                    validated_videos.append(v)
+                    continue
+                if pub_dt >= cutoff_date:
+                    validated_videos.append(v)
+                else:
+                    print(f"  ⏭  Skipping old video: {v.get('title', '')[:50]}... (published {pub})")
+            except (ValueError, TypeError):
+                # Cannot parse date, include video to be safe
+                validated_videos.append(v)
+        videos = validated_videos
 
         # Apply title filter if configured (e.g. "Bocor Alus" on Tempodotco)
         title_filter = channel.get("title_filter", "")
