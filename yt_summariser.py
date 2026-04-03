@@ -833,9 +833,17 @@ def process_video(video_url: str, channel_name: str = "", language: str = "id") 
     title = meta.get("title", f"Video {video_id}")
     channel = channel_name or meta.get("channel", "Unknown")
     published = meta.get("upload_date", "Unknown")
+    duration = meta.get("duration", 0)
 
     print(f"  Title:   {title}")
     print(f"  Channel: {channel}")
+    print(f"  Duration: {duration // 60}m {duration % 60}s" if duration else "  Duration: Unknown")
+
+    # Skip short videos (clips, teasers, shorts) — minimum 10 minutes
+    min_duration = 600  # seconds
+    if duration and duration < min_duration:
+        print(f"  ⏭  Skipping: video is {duration // 60}m {duration % 60}s (minimum {min_duration // 60}m)")
+        return None
 
     # 2. Download audio
     print("\n  STEP 2: Downloading audio...")
@@ -962,6 +970,8 @@ def weekly_scan():
                     channel_name=channel["name"],
                     language=channel.get("language", "id"),
                 )
+                if result is None:
+                    continue  # Video was skipped (too short)
                 all_summaries.append(result)
                 if result.get("transcript_path"):
                     all_transcripts.append(result["transcript_path"])
@@ -1054,21 +1064,24 @@ def main():
 
     if args.url:
         result = process_video(args.url)
-        print(f"\n  Summary:\n{'─' * 40}\n{result['summary']}")
-        # Send email if email credentials are configured
-        from config import EMAIL_PASSWORD
-        if EMAIL_PASSWORD:
-            try:
-                print(f"\n  Sending email with results...")
-                transcript_paths = []
-                tp = result.get("transcript_path", "")
-                if tp and os.path.exists(tp):
-                    transcript_paths.append(tp)
-                send_weekly_email([result], transcript_paths)
-            except Exception as e:
-                print(f"\n  ⚠  Email failed: {e}")
+        if result is None:
+            print(f"\n  Video was skipped (too short, under 10 minutes).")
         else:
-            print(f"\n  ⚠  GMAIL_APP_PASSWORD not set — skipping email.")
+            print(f"\n  Summary:\n{'─' * 40}\n{result['summary']}")
+            # Send email if email credentials are configured
+            from config import EMAIL_PASSWORD
+            if EMAIL_PASSWORD:
+                try:
+                    print(f"\n  Sending email with results...")
+                    transcript_paths = []
+                    tp = result.get("transcript_path", "")
+                    if tp and os.path.exists(tp):
+                        transcript_paths.append(tp)
+                    send_weekly_email([result], transcript_paths)
+                except Exception as e:
+                    print(f"\n  ⚠  Email failed: {e}")
+            else:
+                print(f"\n  ⚠  GMAIL_APP_PASSWORD not set — skipping email.")
     elif args.scan:
         weekly_scan()
     elif args.daemon:
