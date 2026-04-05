@@ -4,53 +4,60 @@
 
 ## Email Summary
 ## Overview
-President Prabowo participated in the second round of "Mata Najwa," addressing complex foreign policy questions, defending his free lunch program (MBG), and discussing economic reforms including the controversial Agreement on Reciprocal Tariffs (ART) with the United States. The wide-ranging discussion covered Indonesia's non-aligned foreign policy stance, ambitious infrastructure and industrialization plans, and promised reforms in law enforcement agencies. Prabowo demonstrated confidence in his economic programs while acknowledging fiscal pressures from geopolitical tensions.
+In this second part of "President Prabowo Answers" on Mata Najwa, President Prabowo Subianto engaged in extensive discussions covering Indonesia's foreign policy, economic development programs, and domestic reforms. The conversation involved prominent analysts including Connie Bakrie, Faisal Basri, Dede Yusuf, and Nana Merdeka. Key topics included Indonesia's non-aligned foreign policy stance amid global tensions, the controversial Agreement on Reciprocal Tariff (ART) with the US, massive social programs like free nutritious meals (MBG), and planned police reform. The President defended his administration's ambitious spending programs while addressing concerns about fiscal constraints and program implementation challenges.
 
 ## Key Highlights
 
-The discussion opened with extensive foreign policy analysis, where Prabowo articulated Indonesia's position in what he described as a combination of "second cold war" and "hot peace." He emphasized Indonesia's unique position as the world's fourth-largest nation by population with abundant natural resources, historically dependent on trade due to its archipelagic geography. Prabowo defended Indonesia's non-aligned stance, rejecting pressure to choose sides between major powers like the US and China, and clarified that Indonesia has made no financial commitments to the Gaza reconstruction fund (BOP) despite speculation about a $1 billion contribution. He stressed that Indonesia would only provide peacekeeping forces if needed.
+The foreign policy discussion revealed President Prabowo's commitment to maintaining Indonesia's traditional non-aligned stance in an increasingly polarized world. When questioned about navigating between major powers like the US, China, Russia, and Iran, he emphasized that Indonesia's geographic position as an archipelagic nation with vast natural resources has historically made it a target for foreign powers. He argued that maintaining good relations with all major powers while refusing to take sides in conflicts is not only consistent with Indonesia's founding principles but essential for protecting national economic interests. The President firmly stated that Indonesia will never allow foreign military bases on its territory and will continue to welcome peaceful visits from all nations equally.
 
-Economic policy dominated much of the conversation, with Prabowo defending his ambitious growth targets and social programs. He outlined massive job creation plans through various initiatives: the MBG program creating 3 million jobs through 30,000 kitchens and associated supply chains, 80,000 cooperatives employing 1.4 million people, and ambitious housing construction targeting 1 million homes creating 5 million jobs. When pressed about fiscal constraints amid rising oil prices and subsidy costs, Prabowo insisted money was available through efficiency gains, claiming to have already saved 500 trillion rupiah through reducing leakages and bureaucratic waste. He acknowledged concerns about the ART agreement with the US but maintained that Indonesian law would take precedence where conflicts arise, and that critical mineral access would only be granted at international market prices with processing requirements intact.
+Regarding the controversial US-Indonesia Agreement on Reciprocal Tariff, President Prabowo provided detailed clarifications amid widespread public confusion about the deal's implications. He categorically denied that Indonesia committed to any financial contributions to the Board of Peacekeeping Operations (BOP), stating that Indonesia only committed to providing peacekeeping forces, not the $1 billion financial contribution that had been speculated. On concerns about the agreement potentially undermining Indonesia's industrialization efforts and critical mineral processing policies, he insisted that all foreign access must comply with Indonesian laws and regulations, including requirements for domestic processing of raw materials. He emphasized that any foreign mining operations must pay international market prices and follow Indonesia's existing regulatory framework.
 
-The conversation concluded with Prabowo's commitment to institutional reform, particularly in law enforcement. He confirmed that a police reform committee led by Prof Jim Lee had completed its work with recommendations for sweeping changes, and pledged to implement reforms despite potential resistance from entrenched interests. Prabowo emphasized that both police and military institutions needed cleaning up, citing recent dismissals of high-ranking officers, and framed institutional reform as a mandate from the people rather than personal preference.
+The President's most passionate defense came regarding his signature free nutritious meals program (MBG), which faces criticism over costs and implementation issues amid fiscal pressures. Despite concerns about the program's substantial budget requirements during a period of rising global tensions and potential subsidy increases, Prabowo declared he would "stake his leadership" on the program's continuation. He argued that the program represents the best investment possible, citing studies showing returns of $7-35 for every dollar spent, and emphasized its critical role in addressing widespread malnutrition among Indonesian children. He acknowledged implementation problems but maintained that the program's benefits to Indonesia's human capital development far outweigh the costs, stating he would rather see money go to feeding children than be lost to corruption.
 
 ## Implications
-This extended interview reveals Prabowo's determination to maintain ambitious domestic programs despite fiscal pressures and international tensions. His defense of the MBG program as essential for human capital development, combined with promises of significant institutional reforms, suggests his administration will prioritize social spending and governance improvements even if it requires controversial trade-offs or confrontations with established power structures.
+
+These discussions illuminate the significant challenges facing Indonesia as it attempts to balance ambitious domestic development programs with complex international relationships and fiscal constraints. President Prabowo's firm commitment to expensive social programs like MBG while navigating potential economic pressures from global conflicts suggests his administration is willing to take considerable political and economic risks to deliver on campaign promises. His approach to foreign policy, maintaining equidistance from major powers while pursuing economic agreements like the ART, reflects Indonesia's complex position as a middle power trying to maximize benefits from great power competition without getting drawn into conflicts.
 
 ## Detailed Analysis
 ## Key Participants
-- **Host**: Najwa Shihab
-- **Main Guest**: President Prabowo Subianto
-- **Panel Members**: 
-  - Umar Juoro (economist, referred to as "Bang Celie")
-  - Nana Sudjana (journalist/media analyst)
-  - Faisal Basri (economist)
-  - Dede Yusuf (policy analyst)
-  - Mardigu Wowiek Prasantyo (strategic analyst)
+- **Host:** Najwa Shihab
+- **Main Guest:** President Prabowo Subianto
+- **Panel Experts:** Connie Bakrie (foreign policy analyst), Faisal Basri (economist), Dede Yusuf (economic expert), Nana Merdeka (journalist)
 
 ## Key Points & Timestamps
 
-- [00:35] Discussion of Indonesia's constitutional preamble containing foreign policy principles, unique among nations in embedding international relations philosophy in founding documents
-- [03:13] Prabowo describes current era as combination of "second cold war" and "hot peace," emphasizing Indonesia's unique position as fourth-largest nation with abundant natural resources
-- [06:55] President explains necessity of extensive diplomatic travel to maintain economic relationships, citing recent trade agreements with EU and Canada
-- [08:59] Prabowo emphasizes need for strong bargaining position in international relations, linking foreign policy to domestic economic strength
-- [19:06] Clear statement on Indonesia's military policy: no foreign military bases allowed, but peaceful naval visits permitted for all nations equally
-- [20:39] Clarification on Gaza reconstruction fund (BOP): Indonesia has made no financial commitments, only offered peacekeeping forces if needed
-- [23:56] Light moment about "bossman" nickname from military days
-- [27:59] Discussion of sovereign wealth fund (Danantara) as deterrent factor and opportunity amid Middle East conflicts
-- [34:43] Extended discussion of Agreement on Reciprocal Tariffs (ART) with US, addressing concerns about non-tariff barriers and critical mineral access
-- [38:37] Prabowo defends ART terms, stating critical mineral access will be at international market prices with processing requirements maintained
-- [47:23] Ambitious job creation projections: MBG program creating 3 million jobs, cooperatives employing 1.4 million, housing program generating 5 million jobs
-- [49:38] Major education infrastructure push: upgrading 70,000 schools this year (up from 17,000 last year), targeting 300,000 schools over five years
-- [51:46] Technology integration in education: Interactive Flat Panels installed in 288,000 schools, expanding to all classrooms by 2027
-- [58:22] Defense of fiscal sustainability through efficiency gains, claiming 500 trillion rupiah saved through reducing waste and leakages
-- [1:09:49] Strong defense of MBG program despite criticism, citing Rockefeller Institute assessment of 7-35 dollar return on every dollar spent
-- [1:22:39] Commitment to police reform based on committee recommendations, while emphasizing institutions must clean themselves up first
+- [00:35] **Foreign Policy Philosophy**: Discussion of Indonesia's constitutional mandate for active participation in world peace, with Bakrie noting Indonesia is one of few countries with foreign policy principles embedded in its constitution's preamble.
+
+- [03:13] **Indonesia's Strategic Position**: President explains Indonesia's unique position as the world's 4th largest nation by population with vast natural resources, historically making it a target for major powers seeking strategic resources like spices and timber.
+
+- [06:24] **Multiple Memberships**: President describes Indonesia's participation in numerous international organizations (ASEAN, G20, OKI) requiring extensive diplomatic engagement to protect national economic interests and job opportunities.
+
+- [14:20] **Non-Alignment Commitment**: President firmly states Indonesia will remain non-aligned and non-block, refusing to choose sides between major powers like the US and China, maintaining good relations with all while avoiding involvement in any conflicts.
+
+- [19:36] **Military Base Prohibition**: President reaffirms Indonesia's long-standing policy prohibiting foreign military bases while allowing peaceful naval visits from all countries equally.
+
+- [21:15] **BOP Clarification**: President categorically denies Indonesia committed to $1 billion financial contribution to Board of Peacekeeping Operations, stating Indonesia only committed peacekeeping forces, not money.
+
+- [36:57] **ART Defense**: Detailed explanation of Agreement on Reciprocal Tariff with US, with President stating 1,819 commodities will have 0% tariffs and that all agreements must comply with Indonesian laws and regulations.
+
+- [38:37] **Critical Minerals Policy**: President maintains that foreign companies can access Indonesian mining but must pay international market prices and process materials domestically according to existing regulations.
+
+- [49:37] **Education Revolution**: Announcement of massive education infrastructure improvement program, upgrading 70,000 schools this year (up from 17,000 last year) with goal of reaching 300,000 schools in five years.
+
+- [53:48] **Job Creation Through MBG**: President explains how free nutritious meals program will create 1.5 million direct jobs in 30,000 kitchens, plus another 1.5 million jobs through supply chain vendors.
+
+- [58:26] **Economic Growth Confidence**: President expresses strong confidence in achieving 8% economic growth through combination of housing program (1 million homes creating 5 million jobs), fishing fleet expansion, and infrastructure development.
+
+- [01:10:26] **MBG Defense**: President passionately defends free nutritious meals program despite criticism, stating he will "stake his leadership" on it and prefers money go to feeding children rather than being corrupted.
+
+- [01:17:29] **International Validation**: President cites Rockefeller Institute assessment that MBG is "the best investment" with returns of $7-35 for every dollar spent.
+
+- [01:23:53] **Police Reform Commitment**: President commits to implementing police reform recommendations, stating his oath requires him to transform the nation including law enforcement institutions.
 
 ## Notable Quotes (translated)
 
-1. [08:29] "Geopolitics has become geoeconomics. If your relationships aren't good, you face various pressures."
+1. [01:10:26] "I will stake my leadership on this. Rather than money being corrupted, it's better that my people can eat. Don't you see the children who are stunting?"
 
-2. [1:09:49] "I will defend [MBG] as much as possible. Rather than having money corrupted, it's better that my people can eat... I stake my leadership on this."
+2. [14:51] "We must not be involved in any war... even regarding the hegemonic rivalry between America and China, we don't want to be involved. We don't want to have to choose one against the other."
 
-3. [1:28:54] "Good police and good soldiers are the people's demand, not a leader's preference. As an official appointed by the people, I must carry out the duties given to me by the people."
+3. [01:17:29] "This is from the Rockefeller Institute... 'Mr. President, this is the best investment you have made. Do you know why? Because one dollar spent on MBG, the return is between 7 and 35 dollars.'"

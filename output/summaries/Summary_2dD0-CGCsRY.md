@@ -6,44 +6,47 @@
 **OUTPUT 1: EMAIL SUMMARY**
 
 ## Overview
-
-President Prabowo Subianto addressed the acid attack on human rights activist Andri Yunus from KontraS during an interview with Najwa Shihab on Mata Najwa. The attack left Yunus with serious burns covering nearly 20% of his body and damage to his right eye. Prabowo characterized the attack as terrorism and promised a thorough investigation that would reach beyond field operatives to identify those who ordered and financed the assault, explicitly stating that state officials would not be protected if found responsible.
+President Prabowo was interviewed on Mata Najwa regarding the acid attack on KontraS activist Andri Yunus, who suffered serious burns and eye damage. The interview covered broader concerns about intimidation of critics and activists, with Prabowo defending his administration's commitment to protecting civil liberties while also suggesting some incidents may be provocations designed to destabilize his government. The discussion highlighted tensions between press freedom advocates and the administration's narrative about external threats and regime change efforts.
 
 ## Key Highlights
 
-The President took a firm stance on the acid attack, calling it "terrorism" and "barbaric" while guaranteeing there would be no impunity even if uniformed state officials were found to be involved. He acknowledged that many similar terror cases in the past year have remained unsolved, stopping only at field operatives rather than uncovering the masterminds behind them. When presented with a list of journalists and activists who have faced intimidation over the past year, all critical voices in public discourse, Prabowo acknowledged public concerns about shrinking democratic space but suggested some incidents might be "false flag operations" designed to destabilize his administration.
+President Prabowo strongly condemned the acid attack on activist Andri Yunus, calling it terrorism and promising a thorough investigation that would pursue not just the perpetrators but those who ordered and funded the attack. He guaranteed that even state officials would face consequences if involved, stating there would be no impunity. However, he also raised the possibility that some incidents could be false flag operations designed to make his administration appear authoritarian, comparing it to intelligence operations where attacks are staged by one party but blamed on another.
 
-The discussion revealed tensions between the President's commitment to press freedom and his suspicions about certain critics. While he promised to build a "civilized Indonesia" with clean law enforcement institutions, he also expressed wariness about NGOs he claimed receive foreign funding and have an "a priori hatred" of the government. Prabowo defended his administration's record, pointing to controlled food prices during Ramadan and arrests of corrupt officials, while admitting to ongoing challenges with what he termed a "deep state" within the bureaucracy, including directors-general who defy ministers and institutions that resist auditing.
+The conversation expanded to address a pattern of attacks on critics over the past year, including journalists and activists who have been critical of the government. Najwa Shihab presented a list of victims and questioned whether safe space for criticism was shrinking. Prabowo defended Indonesia's openness compared to other countries, pointing to the unrestricted spread of content on platforms like TikTok. He acknowledged that some officials and institutions within the bureaucracy operate as a "deep state" and noted his administration has dismissed numerous director-generals who defied ministerial authority.
+
+When pressed about distinguishing legitimate criticism from destabilization efforts, Prabowo cited the August demonstrations where protesters attempted to burn government buildings as clear examples of subversion. He argued that regime change operations and disinformation campaigns are part of modern statecraft, suggesting some criticism is part of orchestrated efforts to destabilize his government rather than genuine democratic discourse.
 
 ## Implications
-
-This interview highlights the delicate balance Prabowo's administration faces between maintaining democratic freedoms and addressing what it perceives as destabilization efforts. His explicit guarantee of no impunity for state officials involved in intimidation represents a significant public commitment that civil society will likely monitor closely as investigations proceed.
+This interview reveals the administration's defensive posture regarding criticism while attempting to balance commitments to civil liberties with national security concerns. The president's acknowledgment of deep state elements within the bureaucracy suggests ongoing institutional challenges that could affect governance effectiveness and accountability.
 
 ## Detailed Analysis
 **OUTPUT 2: DETAILED ANALYSIS**
 
 ## Key Participants
-- **Najwa Shihab**: Host of Mata Najwa, prominent Indonesian journalist and TV presenter
-- **President Prabowo Subianto**: President of Indonesia, discussing the acid attack on KontraS activist and broader issues of democratic space
+- **Host:** Najwa Shihab, prominent Indonesian journalist and TV host
+- **Guest:** President Prabowo Subianto
 
 ## Key Points & Timestamps
 
-- [00:00] Discussion begins about the acid attack on KontraS activist Andri Yunus, who suffered burns on 20% of his body and damage to his right eye. Police received direct presidential instruction to investigate.
-- [00:32] Prabowo calls the attack "terrorism" and "barbaric," promising investigation will reach beyond field operatives to identify who ordered and paid for the attack.
-- [01:02] President explicitly states no protection will be given to state officials if found responsible, including uniformed personnel, guaranteeing no impunity.
-- [01:35] Najwa presents list of journalists and activists targeted over the past year, all critical voices: Francisca Christy Rosana (Tempo), Tio Ardianto, Ramon Doni Adam, and others.
-- [02:37] Prabowo suggests some incidents might be "false flag operations" designed to make his administration appear authoritarian, comparing to intelligence operations.
-- [03:38] President promises to build "civilized Indonesia" with clean government institutions - police, prosecutors, and intelligence services.
-- [05:43] When asked about independent investigation team, Prabowo expresses willingness to consider but warns against NGOs with "a priori hatred" of government receiving foreign funding.
-- [06:15] Discusses challenges with "deep state" within bureaucracy, mentions firing many directors-general who defied ministers and institutions resisting audits.
-- [08:27] Prabowo acknowledges not all criticism aims for regime change but insists some does, referencing destabilization and disinformation as part of statecraft.
-- [09:28] Defends handling of August demonstrations as legitimate response to "makar" (treason) involving attempts to burn government buildings and use of Molotov cocktails.
-- [10:31] Acknowledges challenge of identifying provocateurs behind demonstrations, notes he's only been in office 1.5 years and asks for time to prove himself.
+- [00:00] Discussion of acid attack on KontraS activist Andri Yunus, who suffered 20% burns and right eye damage; police received direct presidential instruction to investigate
+- [00:32] Prabowo calls the attack "terrorism" and "barbaric," promises investigation will pursue not just field perpetrators but those who ordered and paid for it
+- [01:02] President guarantees no impunity even for uniformed state officials if involved, but suggests possibility of provocation by non-government actors
+- [01:35] Host lists pattern of attacks on critics over past year including journalists and activists, questioning if safe space for criticism is shrinking
+- [02:37] Prabowo references "false flag operations" from intelligence books, suggesting some incidents may be staged to make his regime appear authoritarian
+- [03:38] President promises to build "civilized Indonesia" with clean government institutions including police, prosecutors, and intelligence services
+- [04:40] Gives direct guarantee that no citizens should be intimidated or terrorized for criticizing government
+- [05:11] Declines to set timeline for police investigation, open to considering independent investigative team but warns against biased NGOs funded by foreign sources
+- [06:15] Discusses "deep state" within bureaucracy, mentions dismissing director-generals who defied ministers and institutions that refused auditing
+- [07:52] Argues that destabilization and disinformation are part of statecraft, references "regime change" and "color revolution" tactics
+- [08:57] When asked how to distinguish legitimate criticism from subversion, cites August demonstrations where protesters attempted to burn government buildings as clear example of sedition
+- [10:31] Defends mass arrests of students and activists during protests while acknowledging challenge of identifying masterminds behind provocations
 
 ## Notable Quotes (translated)
 
-- [00:32] "This is terrorism. Barbaric actions. We must pursue them, we must investigate. We must investigate not just the field operatives, but... who ordered it, who paid for it."
+- [00:32] "This is terrorism, right? Barbaric actions. We must pursue them, we must investigate. We must investigate not only the field perpetrators, but... who ordered it, who paid for it."
 
-- [01:02] "If it turns out state officials did this? Of course. Those in uniform? They will not be protected, there will be no impunity. Do you guarantee this? I guarantee it."
+- [01:02] "Clearly. Those in uniform? They will not be protected, there will be no impunity? There will not be. Do you guarantee that? I guarantee it."
 
-- [06:15] "I want to enforce the law. How can we enforce the law if we allow things like this? If it's from our officials... I want to tell you that indeed our officials have many shortcomings. We found a deep state."
+- [02:37] "Sometimes there are people... we're not children. We've lived long. Sometimes there are events that are deliberately made to appear... you understand? That's called provocation. That's in intelligence books. It's called false flag operation."
+
+- [11:02] "I swear to defend my people. I have risked my life many times. I cannot bear it. I will leave this country when God calls me. I cannot bear for it to fall into the hands of thieves and bandits."

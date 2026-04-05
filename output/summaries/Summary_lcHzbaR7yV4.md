@@ -4,47 +4,46 @@
 
 ## Email Summary
 ## Overview
-This episode of Musyawarah features host Najwa Shihab and co-host Kajo Maesaroh discussing recent developments in Indonesian politics, particularly the ethics tribunal decisions regarding five suspended DPR members, American politics through the lens of Zohran Mamdani's mayoral victory in New York, and emerging digital privacy concerns around photography during running events. The conversation spans from critiques of Indonesia's political transparency to lessons from international democratic processes and the challenges of protecting personal data in public spaces.
+
+This video episode of "Musyawarah" hosted by Najwa Shihab features co-host Kajo discussing recent Indonesian political developments, particularly focusing on the ethics committee (MKD) ruling against five DPR members who were previously declared "non-active" by their parties but remained in parliament. The conversation explores how political messaging created public confusion and anger, examines the case of New York mayor-elect Zohran Mamdani as an example of grassroots political success, and addresses emerging concerns about privacy violations in running photography and digital security threats facing Indonesians.
 
 ## Key Highlights
 
-The hosts extensively analyze the recent Ethics Council (MKD) decisions regarding five DPR members who were previously declared "non-active" by their parties but remained salaried parliament members until formal proceedings concluded. They argue that public anger stems not just from the members' inappropriate behavior, but from inconsistent messaging that made citizens feel deceived. While parties quickly declared members "non-active" to quell public outrage, this didn't automatically terminate their parliamentary status or salaries, creating a perception of political theater rather than genuine accountability. The hosts emphasize that the real problem lies in systemic issues—behind-the-scenes dealings, corruption, and lack of transparency in legislative processes—that are far more damaging than captured moments of poor judgment on camera.
+The discussion begins with an analysis of the Mahkamah Kehormatan Dewan (MKD) ethics committee ruling that sanctioned three of five DPR members with temporary suspensions ranging from three to six months. The hosts explain how public confusion arose when political parties initially declared these members "non-active" without clarifying that this didn't automatically remove them from parliament - they continued receiving salaries and required formal MKD proceedings. This messaging gap led to public feelings of being deceived, particularly when the suspensions were seen as relatively light punishments. The conversation emphasizes that while public anger is understandable due to inconsistent messaging and accumulated frustration with parliamentary representatives, the sanctions should be proportional to avoid creating a "mute parliament" where members fear speaking publicly.
 
-The discussion then shifts to Zohran Mamdani's remarkable victory as New York's mayor, highlighting how the 34-year-old Muslim socialist immigrant defeated an established political dynasty through grassroots organizing and small-donor fundraising. They contrast this with Indonesia's political system, arguing that similar candidates cannot emerge here due to structural barriers including lack of campaign finance transparency, party nomination processes that favor wealth and connections over ideas, and electoral laws that prevent those without significant resources from accessing ballots. The hosts stress that without systematic reforms to Indonesia's electoral framework, the country will continue to see only elite circulation rather than genuine democratic representation that reflects diverse voices and innovative solutions.
+The hosts then pivot to examining Zohran Mamdani's remarkable victory as New York's mayor-elect, highlighting how the 34-year-old Muslim socialist immigrant from Uganda defeated established political dynasty candidate Andrew Cuomo. They analyze how Mamdani's grassroots campaign, funded by small donations rather than corporate money, successfully addressed practical urban issues like housing affordability, transportation costs, and childcare. His campaign demonstrates how simple, relatable political messaging combined with effective use of social media and technology can mobilize young voters and marginalized voices. The discussion suggests that for similar success stories to emerge in Indonesia, fundamental electoral system reforms are needed to enable candidates without wealth or political connections to compete effectively.
 
-The conversation concludes with concerns about digital privacy in public spaces, specifically the growing phenomenon of photographers capturing runners without consent and selling photos through apps. While acknowledging photographers' need to earn income and citizens' rights to document public spaces, the hosts highlight the regulatory gaps created by technological advancement outpacing legal frameworks. They discuss potential solutions including designated photography zones and better enforcement of Indonesia's Personal Data Protection Law, while noting successful international approaches like Korea's mandatory camera sounds and Australia's strict social media age restrictions for protecting children online.
+The final segment addresses growing privacy concerns around unauthorized photography at running events and broader digital security threats. The hosts discuss how photographers at public running events capture and sell images without consent, raising questions about data protection and the right to privacy in public spaces. They explore potential solutions like designated photography zones and examine how Indonesia's Personal Data Protection Law exists but lacks enforcement mechanisms. The conversation extends to emerging cybersecurity threats, including fake SMS base stations used for fraud, and demonstrates BCA's new security feature that delivers OTP codes directly to mobile banking apps rather than through potentially compromised SMS channels.
 
 ## Implications
 
-These discussions reflect broader challenges facing Indonesian democracy, from accountability gaps in political representation to the need for electoral system reforms that enable merit-based rather than money-based political participation. The digital privacy concerns underscore Indonesia's struggle to balance innovation with citizen protection in an increasingly connected society where personal data faces new forms of exploitation and manipulation.
+These discussions reflect broader challenges facing Indonesian democracy and society, from the need for transparent political processes and electoral reform to adapting regulations for rapidly evolving digital threats. The contrast between Indonesia's political system and examples like Mamdani's success highlights structural barriers to political renewal that may require legislative attention during ongoing election law revisions.
 
 ## Detailed Analysis
 ## Key Participants
-- **Najwa Shihab**: Host and prominent Indonesian journalist, recently returned from reporting trip to New York
-- **Kajo Maesaroh**: Co-host and political commentator
+- **Najwa Shihab**: Host and veteran Indonesian journalist
+- **Kajo**: Co-host and regular contributor to Musyawarah
 
 ## Key Points & Timestamps
 
-- [00:00] Discussion of public feeling deceived by inconsistent messaging about DPR members' status - parties declared them "non-active" but they remained salaried until formal ethics proceedings
-- [03:52] Explanation of gap between party "non-active" status and formal DPR suspension - public misunderstood that party action didn't automatically end parliamentary membership
-- [06:00] MKD ethics tribunal results: 2 members cleared (Adi Skadir, Uyakuya), 3 suspended with varying penalties (3-6 months non-active status)
-- [07:33] Clarification that Uyakuya was victim of manipulated social media content - old videos were stitched together with false narratives about celebrating salary increases
-- [13:09] Critique of focusing on captured moments versus more serious behind-the-scenes corruption and lack of legislative transparency
-- [14:47] Introduction of Zohran Mamdani discussion - 34-year-old Muslim socialist who became New York mayor
-- [16:24] Profile of Mamdani: Ugandan-born, Indian-heritage immigrant who moved to US at age 7, clear pro-Palestine stance, anti-Trump messaging
-- [17:57] Analysis of Mamdani's grassroots campaign success using social media and addressing cost-of-living issues
-- [21:31] Comparison of Mamdani's rise from 1% early polling to record-breaking voter turnout victory
-- [22:05] Discussion of systemic barriers preventing "Zohran-type" candidates in Indonesia - lack of small-donor culture and campaign finance transparency
-- [24:17] Call for electoral law reforms to enable candidates with ideas rather than money to compete
-- [25:50] Shift to discussion of photography phenomenon during running events and privacy concerns
-- [29:01] Legal framework discussion - Personal Data Protection Law exists but enforcement agency not yet established
-- [33:10] International examples: Australia's 16-year minimum age for social media following teen suicide from cyberbullying
-- [35:44] Discussion of fake BTS (Base Transceiver Station) scams for SMS phishing and OTP fraud
+- [00:00] Discussion opens addressing public anger over inconsistent political messaging regarding DPR members who were declared "non-active" by parties but remained in parliament receiving salaries
+- [03:52] Explanation of the gap between party political reactions and formal DPR ethics processes, leading to public confusion and feelings of deception
+- [06:00] Breakdown of MKD ethics committee rulings: two members cleared, three sanctioned with 3-6 month suspensions (Nafa Urbah, Eko Patrio, Ahmad Sahroni respectively)
+- [07:33] Discussion of Buyakuya case - cleared due to manipulated social media content that falsely portrayed old videos as recent misconduct
+- [13:45] Critique that more serious parliamentary misconduct (backroom deals, hidden legislation) receives less attention than viral incidents
+- [14:47] Transition to discussing Zohran Mamdani's victory as New York mayor-elect
+- [19:59] Analysis of Mamdani's grassroots campaign focusing on practical urban issues: housing costs, transportation, childcare
+- [22:05] Comparison of campaign finance transparency between US and Indonesian systems
+- [24:47] Discussion of electoral reform needs to enable candidates like Mamdani to emerge in Indonesia
+- [26:21] Shift to discussing privacy concerns around unauthorized photography at running events
+- [29:26] Explanation of Indonesia's Personal Data Protection Law and enforcement gaps
+- [35:42] Discussion of emerging cyber threats including fake SMS base stations for fraud
+- [36:44] Demonstration of BCA's new OTP security feature delivering codes directly to mobile apps
 
 ## Notable Quotes (translated)
 
-1. [00:34] "It's understandable the public feels lied to because of the inconsistent messaging. So it seemed like there was drama to calm anger when parties said 'non-active.' But then now... Still paid by DPR because still a member. Yes. Even though non-active from party."
+1. [04:25] "It's natural that the public feels deceived because of the inconsistent messaging. It seems like there was drama to reduce anger when parties said 'non-active.' But then now... they're still being paid by the DPR because they're still members."
 
-2. [13:45] "What's not captured by cameras is actually much worse. The under-the-table deals, making laws in collusion with certain stakeholders. That's actually worse than just misspeaking in front of cameras."
+2. [13:45] "What's not caught on camera is actually much worse. The under-the-table deals, making laws through backdoor arrangements with various stakeholders. That's actually worse than just misspeaking in front of cameras."
 
-3. [24:47] "If we want Zohran-type figures to emerge, elected because of ideas not money, elected maybe without experience but with passion and ability to answer needs... We all have that prerequisite, as long as the system is changed."
+3. [24:47] "If we want Zohrans to emerge - those elected for ideas rather than money, those elected who may lack experience but have passion and ability to answer people's needs, who can mobilize youth and utilize digital technology - we all have that potential, as long as the system is changed."

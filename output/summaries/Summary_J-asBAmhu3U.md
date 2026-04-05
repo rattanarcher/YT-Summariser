@@ -4,62 +4,50 @@
 
 ## Email Summary
 ## Overview
-
-This exclusive interview featured Palestinian photojournalist Motaz Azaiza speaking with Indonesian host Najwa Shihab from New York. Azaiza, who documented the Gaza genocide for 108 days before being evacuated in 2024, discussed his experiences covering the brutal Israeli attacks that gained him over 16 million Instagram followers and international recognition including Time's 100 Most Influential People list. The interview explored his psychological struggles with survival guilt, the challenges of being both witness and victim, and his strategic approach to maintaining global attention on Palestinian suffering through diverse storytelling methods.
+This exclusive interview features Palestinian photographer-journalist Motaz Azaiza speaking with Indonesian host Najwa Shihab from New York. Azaiza documented the Gaza genocide for 108 days before being evacuated in 2024, gaining over 16 million Instagram followers and recognition from Time Magazine as one of the 100 most influential people of 2024. The conversation explores his traumatic experiences, the psychological toll of survival, and his ongoing mission to keep global attention focused on Palestinian suffering. Several Indonesian activists and supporters join the discussion, demonstrating Indonesia's strong solidarity with Palestine through various forms of support including the Indonesian Hospital in Gaza.
 
 ## Key Highlights
 
-Azaiza revealed the profound psychological toll of his evacuation from Gaza, describing how he feels he has "lost two years of his life" and struggles with survivor's guilt while his people continue suffering. He explained that speaking to audiences who haven't experienced war is actually more difficult than photographing during airstrikes, as many people remain disconnected from the reality despite consuming news coverage. The journalist emphasized that his work was never just professional - documenting his own community's genocide meant constantly choosing between holding his camera and directly helping neighbors in need.
+Azaiza reveals the profound psychological impact of his survival and evacuation from Gaza, describing feeling like he has "lost two years" of his life since arriving in New York. He explains that while he now has food and water, he lacks peace of mind and struggles with the guilt of being safe while his people continue to suffer. The photographer admits he no longer has hope in the world but continues his work because giving up would mean abandoning his people and the tools he has been given to create change. He emphasizes that his documentation work was never just a job but a responsibility to his community, noting that when photographing destruction, these were his neighbors' homes and he couldn't simply take pictures and leave without helping.
 
-The conversation highlighted Indonesia's significant solidarity with Palestine, including the Indonesian Hospital in Gaza which Azaiza had visited and documented. Indonesian guests shared their various forms of activism, from creating Palestine-themed fashion collections to organizing fundraising campaigns that have raised millions of dollars. Azaiza praised Indonesia's concrete support through building infrastructure like hospitals, calling this more meaningful than short-term aid deliveries. He noted that Palestinians in Gaza are well aware of Indonesian support and consider Indonesians welcome in their homes.
+The interview highlights Indonesia's exceptional support for Palestine, which Azaiza describes as "amazing." He specifically praises the Indonesian Hospital in Gaza, calling it far more valuable than temporary aid like food deliveries. He shares that people in Gaza recognize Indonesia's contributions and express overwhelming gratitude, often crying when they meet Indonesians. The conversation includes testimonials from Indonesian activists, artists, and humanitarian workers who have contributed through various means including fundraising, creative activism, boycotts, and medical support. Azaiza explains his strategic approach to building broader international support by appealing to diverse audiences, including Christians and other communities, rather than limiting his message to Muslim audiences alone.
 
-Azaiza also discussed his strategic communication approach, explaining why he documents stories beyond Gaza-Palestine content and why he works to build bridges with diverse audiences including LGBTQ communities and Christians. He argued that the Palestinian struggle requires broad coalition building rather than limiting support to Muslim audiences only. Despite feeling that little has changed on the ground despite global awareness, he continues his work driven by the belief that giving up would betray his people and that Palestinians don't surrender easily.
+Throughout the discussion, Azaiza addresses the challenges of social media censorship, noting that many of his posts are removed or have limited reach despite his massive following. He describes the difficulty of deciding what content to share, as the reality of Gaza's destruction is often too graphic to display fully. The photographer also discusses his evolution from simply documenting events to understanding his role as a strategic communicator who must think about how different audiences will receive his message. He stresses that achieving justice for Palestine requires sustained, continuous work rather than emotional bursts of support that fade over time.
 
 ## Implications
-
-This interview demonstrates how Indonesian public opinion leaders are positioning Palestine as a central concern for the world's largest Muslim nation, potentially influencing Indonesia's foreign policy approach. Azaiza's strategic communication methods offer insights into how activists are adapting to social media censorship and building broader coalitions beyond traditional religious or political lines.
+This interview demonstrates Indonesia's position as one of Palestine's strongest international supporters, with concrete contributions like hospital infrastructure and sustained grassroots activism. Azaiza's strategic approach to international advocacy reveals the complexities of building global solidarity movements across religious and cultural lines while maintaining authentic Palestinian voices in the narrative.
 
 ## Detailed Analysis
 ## Key Participants
-
-**Host:** Najwa Shihab - Indonesian television presenter and host of Mata Najwa
-
-**Main Guest:** Motaz Azaiza - Palestinian photojournalist from Gaza, 24 years old, gained international recognition documenting the Gaza conflict
-
-**Studio Guests:** Various Indonesian activists including Ciki Fauzi (fashion designer), Michelle Santoso (chef), Shauki Hafiz (BDS Indonesia leader), Hibatul Rahman (Kitabisa platform), and Abdullah Onim (humanitarian worker who lived in Gaza)
+- **Motaz Azaiza**: 24-year-old Palestinian photographer-journalist from Gaza, gained international recognition for documenting the 2023-2024 Gaza conflict
+- **Najwa Shihab**: Indonesian television host of Mata Najwa program
+- **Indonesian Guests**: Ciki Fauzi (fashion designer/activist), Michelle Santoso (chef), Syauqi Hafiz (BDS Indonesia leader), Hibatul Rahman (Kitabisa crowdfunding platform), Abdullah Onim (humanitarian worker who lived in Gaza for 18 years)
 
 ## Key Points & Timestamps
 
-- [00:00] Azaiza discusses being surprised he survived rather than being surprised by his photo's impact
-- [00:30] Describes losing "two years of life" since leaving Gaza and struggling with unsettled feelings
-- [01:35] Opening introduction highlighting Azaiza's 108 days documenting genocide in Gaza
-- [04:19] Explains that traveling the world and speaking to disconnected audiences is harder than photographing during airstrikes
-- [05:19] Defines himself simply as "one of the children of Gaza who suffered from many aggressions"
-- [07:21] Discusses his Instagram bio about photos traveling the world while he cannot touch his homeland
-- [08:53] Says if he could return tomorrow, first priority would be bringing supplies to help people and journalists
-- [09:53] Explains decision to evacuate was to preserve his platform's ability to help more people
-- [12:03] Describes the impossibility of treating documentation as just work when covering your own community's genocide
-- [13:10] Discusses challenges of deciding what to show and dealing with Instagram censorship of over 80 videos
-- [14:14] Talks about photographing Nada, a child survivor, as a symbol of hope
-- [16:48] Explains taking up camera again despite difficulty, fearing he would "disappear" otherwise
-- [20:20] Describes working on non-Gaza stories like Texas wildfires to maintain audience connection and build broader support
-- [22:55] Discusses strategic audience building, noting need to reach people who don't initially care about Palestine-Israel
-- [25:25] Assesses that global solidarity is growing but economic interests make sustained pressure difficult
-- [29:25] Praises Indonesia's Indonesian Hospital in Gaza as meaningful concrete support
-- [31:03] Recalls Indonesian pilgrims recognizing him during his first Umrah pilgrimage
-- [36:02] Responds to question about lack of protection for journalists, explaining press vests are for Palestinian recognition, not Israeli protection
-- [39:05] Describes last meal with family before evacuation: falafel, hummus, and ful
-- [43:16] Discusses justice vs. peace, arguing Palestinians are alone without real state support for justice
-- [48:48] Responds to Indonesian solidarity question, emphasizing that building hospitals helps more than temporary aid
-- [55:09] Explains strategic approach of documenting Christian Palestinians to build broader international support beyond Muslim audiences
-- [59:09] Describes how Gazans welcome international visitors warmly since they rarely see outsiders
-- [1:01:46] Admits often feeling nothing changes despite his work, but says giving up isn't an option
-- [1:02:53] Explains what keeps him going: Palestinian resilience culture and belief that Palestinians don't surrender easily
+- [00:30] Azaiza describes feeling unsettled and having lost "2 years of his life" since evacuating to New York, despite having basic needs met
+- [02:07] Background on Azaiza's 108-day documentation of Gaza conflict, earning him 16M+ Instagram followers and international recognition
+- [04:17] Explains that meeting new people and explaining the situation is harder than being under bombardment or receiving threats
+- [06:20] Describes himself as just "one of the children of Gaza" who suffered through wars and lost many people
+- [08:21] Details how Israel accused him of terrorism in August 2023, preventing him from visiting West Bank and Jerusalem
+- [10:21] Decision to evacuate was based on protecting his ability to reach people, not wanting Israel to destroy that tool
+- [12:24] Emphasizes he couldn't treat documentation as just work - these were his neighbors and people he knew
+- [13:26] Discusses social media censorship, losing over 80 videos on Instagram without notification
+- [14:26] Shares story of photographing Nada, a girl who survived being trapped under rubble and underwent 67 operations
+- [20:42] Explains his work documenting other humanitarian crises to keep diverse audiences connected to Palestinian cause
+- [25:20] Believes solidarity is growing but emphasizes need for sustained, continuous work rather than emotional bursts
+- [29:22] Praises Indonesian Hospital in Gaza, calling it more valuable than temporary aid
+- [36:35] Addresses targeting of journalists, explains press vests are for Palestinian recognition, not Israeli protection
+- [44:16] Discusses challenge of seeking justice when facing a powerful enemy while being largely alone
+- [50:20] Emphasizes that building hospitals is more impactful than sending temporary supplies
+- [55:09] Explains strategy of appealing to diverse audiences (Christians, LGBTQ community) to build broader support
+- [01:02:07] States he no longer has hope but continues because "we don't give up easily" - this is Palestinian character
+- [01:04:17] Believes Palestine will change within 3 years, encourages young activists to never lose hope
 
 ## Notable Quotes (translated)
 
-**[05:49]** "I'm just a human. I'm just a man who has dreams, who wants to see the world, who wants to live in a free country."
+1. [06:20] "I am just a human being, I am just a man who has dreams, who wants to see the world, who wants to live in a free country."
 
-**[19:50]** "If you lose it [the platform], you betray your people in this way. I always hoped to change... One day, I will be something, I need to change. I need to help to change for a better life for people in Gaza."
+2. [37:05] "We wear [press vests] only to show our people that we are journalists, so please give us space. We don't wear them for Israeli protection, because it doesn't matter - they will kill you regardless."
 
-**[1:02:53]** "You have to tell something about people in Gaza because our situation is not easy to give up, very easy to go, so we don't give up easily... it's about how they say in our language, jaka, bijak, means we are not easy, we don't surrender."
+3. [01:02:37] "We in Gaza don't give up easily... Israel wants to end our lives, okay, I will show the truth. Whatever they do, they are not stronger than us, we can fight them."

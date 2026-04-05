@@ -4,50 +4,45 @@
 
 ## Email Summary
 ## Overview
-
-Indonesian journalist Najwa Shihab documents her week-long visit to New York City, primarily to cover the UN General Assembly and related high-level diplomatic events. The video chronicles her professional assignments including exclusive interviews with Bill Gates and Australian Prime Minister Anthony Albanese, coverage of President Prabowo's maiden UN speech, and attendance at various international forums. Beyond the formal journalistic work, Shihab explores New York's cultural landscape, from Central Park morning jogs to Williamsburg sunsets, legendary pizza spots, and subway rides, offering viewers both behind-the-scenes glimpses of international journalism and personal reflections on the city's relentless pace and ambition.
+Indonesian journalist Najwa Shihab spent a week in New York covering high-profile diplomatic events including the UN General Assembly and conducting exclusive interviews with global leaders. Her video documents both professional assignments and personal observations during this September 2024 trip. The content combines serious journalism coverage with cultural exploration, offering viewers insights into both international diplomacy and New York's urban lifestyle. This represents significant access for Indonesian media, including exclusive interviews with Bill Gates and Australian Prime Minister Anthony Albanese, plus coverage of President Prabowo's maiden UN speech.
 
 ## Key Highlights
+Najwa's professional agenda centered around major diplomatic events, beginning with attendance at the Gates Foundation's Goalkeepers 2025 event where she secured an exclusive interview with Bill Gates. She received special "Guest of Mission" status for the UN General Assembly, allowing her privileged seating rather than standard media placement in the balcony. Her coverage included President Prabowo's inaugural UN address, where he addressed Indonesia's position on Israeli occupation of Palestine, though she could only secure an off-the-record conversation due to his packed schedule. She also covered a high-level meeting organized by the Australian government on protecting children in the digital age, securing another exclusive interview with Prime Minister Anthony Albanese.
 
-Shihab's primary mission centered on covering Indonesia's participation in the UN General Assembly, where she secured special "Guest of Mission" status allowing closer access to proceedings. She conducted exclusive interviews with prominent figures including Microsoft founder Bill Gates during the Gates Foundation's Goalkeepers 2025 event, and Australian Prime Minister Anthony Albanese during a digital child safety summit. Her coverage included President Prabowo Subianto's debut speech at the UN, which addressed Indonesia's stance on the Israeli-Palestinian conflict, though security constraints limited her to only off-the-record conversations with the president despite hours of waiting outside the UN building.
+Beyond official diplomatic coverage, Najwa explored New York's cultural landscape through meetings with notable figures like Brandon Stanton, creator of "Humans of New York," whom she interviewed at Madison Square Park. She documented street demonstrations in solidarity with Palestine that coincided with Israeli Prime Minister Netanyahu's UN address, showing the intersection of local activism with global diplomacy. Her personal exploration included visits to legendary pizza establishments, walks through Central Park, and sunset viewing from Williamsburg's waterfront, providing viewers with both tourist and resident perspectives of the city.
 
-The video captures the intensive nature of international journalism, with Shihab documenting the logistical challenges of covering high-profile diplomatic events. From navigating flight delays in Hong Kong to dealing with restricted traffic patterns around Manhattan during "High Level Week," she provides candid insights into the unglamorous aspects of the profession. Her daily step count averaged over 15,000 during the week, peaking at 25,000 steps during her busiest days covering demonstrations and diplomatic events, illustrating the physical demands of comprehensive news coverage.
-
-Beyond professional obligations, Shihab embraces New York's cultural offerings and urban rhythm. She explores the city's legendary culinary scene, visits Central Park for morning runs, experiences the subway system, and captures sunset views from Williamsburg. Her observations extend to the city's essence, describing how New York's relentless energy pushes everyone to move faster, noting that while the city can make individuals feel small, every small step has meaning. She concludes with philosophical reflections on ambition, sufficiency, and the universal human pursuit of contentment across different cultures and cities.
+The video captures the intensity of diplomatic journalism, with Najwa noting the physical demands of coverage including long waits, extensive walking (recording over 25,000 steps on busy days), and the challenge of navigating New York's modified traffic patterns during high-security diplomatic events. Her observations about the city's relentless pace and ambition provide philosophical reflection on urban life and human aspirations, concluding that satisfaction might come from wanting less rather than achieving more.
 
 ## Implications
-
-This documentation provides valuable insight into how Indonesian media covers major international diplomatic events and the practical challenges journalists face in accessing global leaders. Shihab's reflections on New York's pace and ambition offer a cross-cultural perspective that may resonate with Indonesian audiences considering urban development and lifestyle choices in their own rapidly growing cities.
+This coverage demonstrates Indonesian media's growing access to high-level international forums and global leaders, reflecting Indonesia's rising diplomatic profile under President Prabowo. The exclusive interviews and special access suggest stronger bilateral relationships, particularly with Australia and philanthropic organizations focused on global development goals.
 
 ## Detailed Analysis
 ## Key Participants
-
-**Host:** Najwa Shihab - Prominent Indonesian journalist and TV presenter, host of "Mata Najwa"
-**Interviewees:** Bill Gates (Microsoft founder, Gates Foundation), Anthony Albanese (Australian Prime Minister), Brandon Stanton (creator of Humans of New York), brief encounter with President Prabowo Subianto
+**Host:** Najwa Shihab - Prominent Indonesian journalist and TV host
+**Guests/Interviewees:** Bill Gates (Microsoft founder, philanthropist), Brandon Stanton (creator of Humans of New York), Australian Prime Minister Anthony Albanese, brief off-record conversation with President Prabowo Subianto
 
 ## Key Points & Timestamps
-
-- [00:00] Opening remarks about New York as "the city that never sleeps" with temperature observations and ambitious city atmosphere
-- [02:10] Journey details: Jakarta to Hong Kong (2 hours), Hong Kong to New York (16 hours), with 3-hour layover
-- [03:50] Flight delay in Hong Kong due to heavy rain and strong winds, passengers given rain jackets
-- [05:16] Arrival in New York after 23-hour journey, smooth immigration process when stating "UN General Assembly" purpose
-- [06:51] Meeting with Brandon Stanton (Humans of New York creator) at Madison Square Park
-- [08:30] Exclusive interview with Bill Gates at Goalkeepers 2025 event by Gates Foundation
-- [09:34] Special invitation as "Guest of Mission" to UN General Assembly, different from regular media seating
-- [10:39] Witnessing world leaders' speeches from UN General Assembly balcony, including President Prabowo
-- [11:19] Brief encounter with President Prabowo, limited to off-the-record conversation due to tight schedule
-- [12:21] Traffic restrictions in New York during High Level Week affecting movement around the city
-- [17:31] Interview with Australian Prime Minister Anthony Albanese during digital child safety summit
-- [20:00] Exploring New York's legendary pizza scene using subway transportation
-- [24:28] Covering Palestinian solidarity demonstration in Times Square coinciding with Netanyahu's UN speech
-- [25:44] Sunset viewing from Williamsburg with Manhattan skyline backdrop
-- [29:52] Final day relaxation at Central Park after intensive week of journalism work
-- [33:24] Philosophical reflection on New York's pace, ambition, and the meaning of individual actions in a big city
+- [00:00] Opening scene in New York with temperature at 40°F, establishing the city's ambitious atmosphere
+- [01:08] Introduction to week-long coverage starting with UN General Assembly and exclusive Bill Gates interview
+- [02:11] Travel details: Jakarta to Hong Kong (4 hours), Hong Kong to New York (16 hours) with weather delays
+- [05:03] Arrival in New York after 23-hour journey, discussing immigration process and jet lag management
+- [06:35] First meeting with Brandon Stanton at Madison Square Park to discuss Humans of New York project
+- [08:19] Gates Foundation Goalkeepers 2025 event coverage and exclusive interview with Bill Gates
+- [09:36] Special "Guest of Mission" invitation to UN General Assembly, different from standard media access
+- [10:39] Coverage of President Prabowo's maiden UN speech addressing Israeli occupation of Palestine
+- [11:50] Attempt to secure interview with President Prabowo, only achieving off-record conversation
+- [12:21] Discussion of heightened New York security during UN high-level week affecting traffic
+- [17:37] Coverage of Australian government meeting on digital child protection with PM Albanese interview
+- [20:00] Cultural exploration including legendary New York pizza and subway transportation
+- [24:02] Dinner with Zayed Award for Human Fraternity recipients including former world leaders
+- [24:35] Coverage of Palestinian solidarity demonstration coinciding with Netanyahu's UN address
+- [25:48] Personal moment enjoying Williamsburg sunset with World Trade Center views
+- [30:14] Final day relaxation in Central Park, reflecting on week's intensive coverage
+- [33:24] Philosophical conclusion about New York's pace and human ambition
 
 ## Notable Quotes (translated)
+- [33:54] "There's something about this city that pushes me to step faster, like every human in this city is running toward something they believe in. Some run to survive, some just so they won't be left behind."
 
-1. [00:00] "New York, the city that never sleeps. Here, I feel how hustle and ambition become the rhythm of life. Whatever you say, it won't change my mind."
+- [34:24] "New York can make you feel small, but if we observe and reflect again, nothing is truly small here. Even these short steps matter."
 
-2. [33:54] "There's something about this city that pushes me to step faster, as if every person in this city is running toward something they believe in. Some run to survive, some just so they won't be left behind."
-
-3. [34:24] "New York can make you feel small, but if we observe and reflect again, nothing is truly small here. Even these short steps have meaning... Maybe New York and other cities in the world won't feel too suffocating when we stop wanting too much."
+- [34:55] "Maybe New York and other cities in the world won't feel so suffocating when we stop wanting too much."
