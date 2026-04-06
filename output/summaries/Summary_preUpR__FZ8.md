@@ -4,43 +4,44 @@
 
 ## Email Summary
 ## Overview
-This Bocor Alus Politik episode examines PDIP's complex political positioning under President Prabowo's administration, revealing how Indonesia's largest opposition party is playing a "two-footed" political game. The discussion centers on the meeting between Megawati Soekarnoputri and Prabowo Subianto before Eid, analyzing PDIP's strategy of simultaneously supporting the government from outside while maintaining critical positions on key policies. The hosts reveal internal party dynamics showing PDIP's struggle between wanting to appear as legitimate opposition while maintaining protective relationships with the ruling administration.
+
+This Bocor Alus Politik episode analyzes PDIP's complex political positioning under President Prabowo's administration, revealing what hosts describe as a "two-legged" political strategy. Despite positioning themselves as the primary opposition party outside the government coalition, PDIP maintains an ambiguous relationship with Prabowo through both criticism and cooperation. The discussion centers on the April 2025 meeting between Megawati Soekarnoputri and Prabowo at the presidential palace, which was arranged to ease tensions following PDIP's harsh criticism of the free nutritious meals program and other government policies.
 
 ## Key Highlights
 
-The episode reveals significant tensions within PDIP's political strategy following Megawati's two-hour private meeting with President Prabowo at the presidential palace. Despite PDIP's official stance of supporting the government from outside until 2029, internal party meetings consistently prioritize critiquing Prabowo's policies as their first agenda item. The party has systematically reviewed and criticized major government programs including the free nutritious meals program (MBG), the Red and White Village Cooperatives, and the president's handling of Sumatra flooding disasters. However, these criticisms face immediate pushback from what sources describe as "4th floor" pressure - referring to DPR leadership - with PDIP legislators receiving direct phone calls, warnings, and even threats of committee transfers when their critiques become too sharp.
+The episode reveals significant behind-the-scenes dynamics between PDIP and the Prabowo administration. According to the hosts' sources, Megawati has instructed party leadership to systematically review and critique Prabowo's policies while simultaneously prohibiting party cadres from financially benefiting from government programs like the free nutritious meals initiative. This dual approach reflects PDIP's struggle to maintain relevance as an opposition force while avoiding complete antagonism toward the government. The party's internal directive, issued in February 2025, explicitly banned PDIP members from profiting from nutritious meal program contracts, forcing some to return their business licenses after the National Nutrition Agency publicly revealed PDIP involvement in the program.
 
-The analysis exposes PDIP's internal contradictions and strategic vulnerabilities that prevent them from taking a firm opposition stance. The party issued official instructions in February 2025 prohibiting cadres from participating in or profiting from MBG programs after accusations emerged that PDIP members were running program kitchens. Meanwhile, party leaders acknowledge feeling politically constrained compared to their bold opposition role during the Susilo Bambang Yudhoyono era, citing concerns about past corruption cases potentially resurging and the need for protection from the current administration. This dynamic has created what the hosts describe as an "ambiguous politics" where PDIP simultaneously seeks benefits from proximity to power while attempting to maintain opposition credibility through carefully calibrated critiques.
+The political relationship remains strained by historical grievances, particularly Prabowo's lingering resentment over PDIP's alleged role in the August 2024 protests, based on intelligence reports he received. However, both sides recognize the need for political accommodation. PDIP fears potential legal vulnerabilities for its members and requires protection from the presidential palace, while also keeping options open for future coalition possibilities in 2029. The party's criticism in parliament faces constant pressure from what the hosts describe as "4th floor" interference - referring to DPR leadership's attempts to moderate PDIP's opposition stance through warnings, pressure to remove social media content, and threats of committee reassignments.
 
 ## Implications
 
-This political maneuvering reflects broader challenges facing Indonesian democracy, where opposition parties struggle to maintain independent positions amid concentrated political power and potential retaliation. PDIP's calculated approach suggests they are positioning for potential future coalition opportunities while managing immediate risks, which could weaken democratic accountability and parliamentary oversight functions in the near term.
+This political dynamic reveals the constrained nature of opposition politics in contemporary Indonesia, where even the largest non-coalition party must carefully calibrate its criticism to avoid retaliation. PDIP's "two-legged" strategy reflects broader challenges facing political parties trying to maintain independence while securing their institutional survival in an increasingly consolidated political environment under Prabowo's administration.
 
 ## Detailed Analysis
 ## Key Participants
-- **Remon Dusrikang** (Host): Tempo journalist
-- **Francisca Christy Rasana** (Host): Tempo journalist  
-- **Hussein Abri Dongoran** (Host): Tempo journalist
+
+**Hosts:**
+- Raymond Usri Kang
+- Francisca Christy Rasana  
+- Hussein Abri Dongoran
 
 ## Key Points & Timestamps
 
-- [00:30] Prabowo reportedly felt "attacked by missiles" by PDIP criticism while abroad, threatening to "fire missiles back" at Indonesian schools, showing his anger over PDIP's frontal criticism of the free nutritious meals program
-- [01:02] PDIP faces "alarm sounds from the 4th floor" (DPR leadership) whenever they criticize Prabowo's policies harshly, receiving direct phone calls, warnings, and threats of committee transfers
-- [03:38] Megawati and Prabowo's two-hour private meeting at the palace discussed Iran relations historically but avoided current conflicts; Prabowo requested PDIP support for government stability
-- [06:21] Megawati reaffirmed PDIP's commitment to support Prabowo's government "from outside" until 2029, maintaining their non-coalition status
-- [07:24] Prabowo still harbors resentment from August 2024 riots, having received intelligence reports allegedly implicating PDIP in provocations, particularly targeting PDIP's Adhian Napitupulu
-- [12:25] Megawati's internal party directive has two main points: review/criticize Prabowo's policies and prohibit cadres from participating in or profiting from MBG programs
-- [12:55] PDIP issued official written instructions in February 2025 strictly prohibiting party members from gaining financial benefits from MBG kitchen operations
-- [18:52] Unlike the SBY era when PDIP boldly declared opposition status, current PDIP fears past corruption cases could resurface and notes the solid support base around Prabowo
-- [23:24] All PDIP policy decisions must be approved through the "Situation Room" led by Prananda Prabowo (Megawati's son), centralizing party decision-making
-- [25:24] PDIP believes they need Prabowo's protection, suspecting external interference attempts during their 2025 congress to potentially unseat Megawati
-- [27:24] Multiple PDIP legislators have been transferred between committees as punishment for vocal criticism, with Adhian Napitupulu moved six times during his tenure
-- [28:54] PDIP operates through three power centers: DPP (more critical), DPR faction (softer), and Megawati (commanding both), creating internal tensions
+- [00:33] Prabowo's reaction to PDIP criticism while abroad: "I'm being attacked by PDIP, I'll attack back when I return to Indonesia"
+- [03:44] Megawati-Prabowo meeting at palace lasted two hours, discussing Iran policy and historical Indonesia-Iran relations rather than current conflicts
+- [05:47] Prabowo requested PDIP support for government stability; Megawati committed to supporting government "from outside" until 2029
+- [07:24] Prabowo still harbors resentment from August 2024 protests, having received intelligence reports alleging PDIP involvement as provocateurs
+- [08:30] PDIP sent envoys to explain their position wasn't as reported by state institutions during the protests
+- [10:07] PDIP's frontal criticism of free nutritious meals program prompted Prabowo's "missile" threats while he was overseas
+- [12:25] Megawati's internal instructions: review/critique Prabowo's policies while prohibiting cadres from profiting from government programs
+- [12:55] DPP-PDIP issued formal letter in February 2025 banning members from financial involvement in nutritious meal programs
+- [15:11] "4th floor" (DPR leadership) consistently pressures PDIP when they criticize Prabowo's priority programs
+- [20:54] PDIP faces pressure including phone calls, demands to remove social media content, and threats of committee reassignments
+- [25:24] PDIP maintains relationship with Prabowo for protection and potential future coalition opportunities in 2029
+- [27:24] Multiple PDIP DPR members relocated between committees, including Adhian Pitu Puluh (6 times) and Rika Diah Pitoloka
 
 ## Notable Quotes (translated)
 
-1. [00:30] "When Prabowo was abroad, he said 'Wow, I'm being hit by missiles from PDIP. I'll fire missiles back at Indonesian schools later.'" - showing Prabowo's reaction to PDIP criticism
+- [00:33] **Prabowo's reported reaction:** "Wow, I'm being attacked by PDIP. I'll attack back when I return to Indonesia." - Shows the personal nature of political tensions.
 
-2. [12:25] "Megawati in closed meetings at DPP always instructs her ranks to review or criticize Prabowo's policies, and second, requests that no cadres participate in or profit from MBG programs."
-
-3. [29:54] "10-15 years ago we saw that PDIP was a party that could dare to take a stance... We don't see that in today's PDIP. They play two-footed politics in today's government."
+- [29:54] **Host analysis:** "We don't see that in today's PDIP. They play two-legged politics in today's government. On one side, they want to gain benefits from their party's closeness to Prabowo... but on the other side, they also want to remain seen as a party that opposes the government." - Summarizes PDIP's strategic ambiguity.
