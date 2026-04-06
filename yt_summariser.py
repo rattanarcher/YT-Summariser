@@ -98,30 +98,56 @@ def get_recent_videos(channel_id: str, days: int = 7) -> list[dict]:
 def get_recent_videos_ytdlp(channel_handle: str, days: int = 7) -> list[dict]:
     """
     Fallback: Use yt-dlp to discover recent videos (no API key needed).
+    Does NOT use --flat-playlist so that upload_date is reliably returned.
     """
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
     cutoff_str = cutoff.strftime("%Y%m%d")
 
     cmd = [
         "yt-dlp",
-        "--flat-playlist",
         "--dump-json",
+        "--no-download",
         "--dateafter", cutoff_str,
-        "--playlist-end", "25",
-        f"https://www.youtube.com/{channel_handle}/videos",
+        "--playlist-end", "15",
+        "--remote-components", "ejs:github",
     ]
 
+    # Add cookies if available
+    cookies_path = os.getenv("YT_DLP_COOKIES", "")
+    if cookies_path and os.path.exists(cookies_path):
+        cmd.extend(["--cookies", cookies_path])
+
+    cmd.append(f"https://www.youtube.com/{channel_handle}/videos")
+
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
         videos = []
         for line in result.stdout.strip().split("\n"):
             if not line:
                 continue
-            data = json.loads(line)
+            try:
+                data = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            upload_date = data.get("upload_date", "")
+            # Only include if we have a valid date and it's recent
+            if upload_date and len(upload_date) == 8:
+                try:
+                    pub_dt = datetime(int(upload_date[:4]), int(upload_date[4:6]), int(upload_date[6:8]), tzinfo=timezone.utc)
+                    if pub_dt < cutoff:
+                        print(f"  ⏭  yt-dlp: skipping old video: {data.get('title', '')[:50]}...")
+                        continue
+                except ValueError:
+                    continue
+            else:
+                # No date available, skip to be safe
+                print(f"  ⏭  yt-dlp: skipping video with no date: {data.get('title', '')[:50]}...")
+                continue
+
             videos.append({
                 "video_id": data.get("id", ""),
                 "title": data.get("title", ""),
-                "published_at": data.get("upload_date", ""),
+                "published_at": upload_date,
                 "url": f"https://www.youtube.com/watch?v={data.get('id', '')}",
                 "duration": data.get("duration", 0),
                 "description": data.get("description", ""),
@@ -942,16 +968,17 @@ def weekly_scan():
                 elif len(str(pub)) == 8:
                     pub_dt = datetime(int(pub[:4]), int(pub[4:6]), int(pub[6:8]), tzinfo=timezone.utc)
                 else:
-                    # Cannot parse date, include video to be safe
-                    validated_videos.append(v)
+                    # Cannot parse date — SKIP to be safe
+                    print(f"  ⏭  Skipping video with no date: {v.get('title', '')[:50]}...")
                     continue
                 if pub_dt >= cutoff_date:
                     validated_videos.append(v)
                 else:
                     print(f"  ⏭  Skipping old video: {v.get('title', '')[:50]}... (published {pub})")
             except (ValueError, TypeError):
-                # Cannot parse date, include video to be safe
-                validated_videos.append(v)
+                # Cannot parse date — SKIP to be safe
+                print(f"  ⏭  Skipping video with unparseable date: {v.get('title', '')[:50]}...")
+                continue
         videos = validated_videos
 
         # Apply title filter if configured (e.g. "Bocor Alus" on Tempodotco)
