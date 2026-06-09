@@ -234,26 +234,47 @@ def get_video_metadata(video_url: str) -> dict:
 # STEP 3: Transcribe Audio with Gemini
 # ═══════════════════════════════════════════════════════════════════
 
-def _gemini_generate_with_retry(client, model, contents, config=None, max_retries=5):
+def _gemini_generate_with_retry(client, model, contents, config=None, max_retries=6):
     """
     Call Gemini generate_content with exponential backoff retry.
     Retries on transient errors (503 overloaded, 429 rate limit, 500).
+    If the primary model stays overloaded, falls back to alternate models
+    that often have spare capacity.
     """
     import time as _time
-    for attempt in range(max_retries):
-        try:
-            if config is not None:
-                return client.models.generate_content(model=model, contents=contents, config=config)
-            return client.models.generate_content(model=model, contents=contents)
-        except Exception as e:
-            msg = str(e)
-            is_transient = any(code in msg for code in ["503", "429", "500", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "high demand"])
-            if is_transient and attempt < max_retries - 1:
-                wait = 2 ** (attempt + 2)  # 4, 8, 16, 32 seconds
-                print(f"  ⏳  Gemini busy (attempt {attempt + 1}/{max_retries}). Retrying in {wait}s...")
-                _time.sleep(wait)
-            else:
-                raise
+
+    # Try the primary model first, then fall back to alternates if it stays busy
+    fallback_models = [model, "gemini-2.5-flash-lite", "gemini-2.0-flash"]
+    # De-duplicate while preserving order
+    models_to_try = list(dict.fromkeys(fallback_models))
+
+    last_error = None
+    for model_idx, current_model in enumerate(models_to_try):
+        if model_idx > 0:
+            print(f"  🔄  Switching to fallback model: {current_model}")
+        for attempt in range(max_retries):
+            try:
+                if config is not None:
+                    return client.models.generate_content(model=current_model, contents=contents, config=config)
+                return client.models.generate_content(model=current_model, contents=contents)
+            except Exception as e:
+                msg = str(e)
+                last_error = e
+                is_transient = any(code in msg for code in ["503", "429", "500", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "high demand"])
+                if is_transient and attempt < max_retries - 1:
+                    wait = min(2 ** (attempt + 2), 60)  # 4, 8, 16, 32, 60, 60 seconds
+                    print(f"  ⏳  {current_model} busy (attempt {attempt + 1}/{max_retries}). Retrying in {wait}s...")
+                    _time.sleep(wait)
+                elif is_transient:
+                    # Exhausted retries on this model — break to try the next fallback
+                    print(f"  ⚠  {current_model} still unavailable after {max_retries} attempts.")
+                    break
+                else:
+                    # Non-transient error — don't retry or fall back
+                    raise
+    # All models and retries exhausted
+    if last_error:
+        raise last_error
     raise RuntimeError("Gemini generate_content failed after retries")
 
 
