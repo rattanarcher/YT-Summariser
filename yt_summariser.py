@@ -234,6 +234,29 @@ def get_video_metadata(video_url: str) -> dict:
 # STEP 3: Transcribe Audio with Gemini
 # ═══════════════════════════════════════════════════════════════════
 
+def _gemini_generate_with_retry(client, model, contents, config=None, max_retries=5):
+    """
+    Call Gemini generate_content with exponential backoff retry.
+    Retries on transient errors (503 overloaded, 429 rate limit, 500).
+    """
+    import time as _time
+    for attempt in range(max_retries):
+        try:
+            if config is not None:
+                return client.models.generate_content(model=model, contents=contents, config=config)
+            return client.models.generate_content(model=model, contents=contents)
+        except Exception as e:
+            msg = str(e)
+            is_transient = any(code in msg for code in ["503", "429", "500", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "high demand"])
+            if is_transient and attempt < max_retries - 1:
+                wait = 2 ** (attempt + 2)  # 4, 8, 16, 32 seconds
+                print(f"  ⏳  Gemini busy (attempt {attempt + 1}/{max_retries}). Retrying in {wait}s...")
+                _time.sleep(wait)
+            else:
+                raise
+    raise RuntimeError("Gemini generate_content failed after retries")
+
+
 def transcribe_audio(audio_path: str, language: str = "id") -> dict:
     """
     Transcribe audio using Gemini 2.5 Flash via the File API.
@@ -279,7 +302,8 @@ def transcribe_audio(audio_path: str, language: str = "id") -> dict:
     )
 
     print(f"  🤖  Generating transcript...")
-    response = client.models.generate_content(
+    response = _gemini_generate_with_retry(
+        client,
         model=GEMINI_MODEL,
         contents=[uploaded, prompt],
     )
@@ -461,7 +485,8 @@ def generate_summary(transcript: str, video_title: str, channel_name: str) -> di
 
     try:
         from google.genai import types
-        response = client.models.generate_content(
+        response = _gemini_generate_with_retry(
+            client,
             model=GEMINI_MODEL,
             contents=user_prompt,
             config=types.GenerateContentConfig(
