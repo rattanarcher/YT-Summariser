@@ -45,8 +45,7 @@ pip install --upgrade pip
 
 pip install \
     yt-dlp \
-    openai-whisper \
-    anthropic \
+    google-genai \
     google-api-python-client \
     python-docx \
     schedule \
@@ -72,9 +71,9 @@ if [ ! -f "$ENV_FILE" ]; then
 # Get one at: https://console.cloud.google.com/apis/credentials
 export YOUTUBE_API_KEY=""
 
-# Anthropic API key (for Claude summaries)
-# Get one at: https://console.anthropic.com/settings/keys
-export ANTHROPIC_API_KEY=""
+# Google Gemini API key (for transcription + summaries)
+# Get one at: https://aistudio.google.com/app/apikey
+export GEMINI_API_KEY=""
 
 # Gmail sender configuration
 # Use an App Password: https://myaccount.google.com/apppasswords
@@ -82,8 +81,6 @@ export EMAIL_SENDER="your-email@gmail.com"
 export GMAIL_APP_PASSWORD=""
 export EMAIL_RECIPIENTS="recipient1@example.com,recipient2@example.com"
 
-# Optional: OpenAI API key (if using Whisper API instead of local model)
-# export OPENAI_API_KEY=""
 ENVEOF
     echo "  Created .env file — please edit it with your API keys."
 else

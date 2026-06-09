@@ -31,14 +31,14 @@ YouTube Channels
          │
          ▼
 ┌──────────────────┐
-│  3. TRANSCRIBE   │  OpenAI Whisper (large-v3)
-│     Full text    │  Indonesian language model
-│     + timestamps │  30-second timestamp blocks
+│  3. TRANSCRIBE   │  Gemini 2.5 Flash (audio)
+│     Full text    │  Indonesian, single call
+│     + timestamps │  No chunking needed
 └────────┬─────────┘
          │
          ▼
 ┌──────────────────┐
-│  4. SUMMARISE    │  Claude (Anthropic API)
+│  4. SUMMARISE    │  Gemini 2.5 Flash (text)
 │     English      │  Translates & summarises
 │     + timestamps │  Structured format with timestamps
 └────────┬─────────┘
@@ -63,7 +63,7 @@ chmod +x setup.sh
 Edit `.env` with your credentials:
 ```bash
 export YOUTUBE_API_KEY="..."       # YouTube Data API v3
-export ANTHROPIC_API_KEY="..."     # Anthropic (Claude)
+export GEMINI_API_KEY="..."        # Google Gemini (transcription + summaries)
 export EMAIL_SENDER="..."          # Gmail address
 export GMAIL_APP_PASSWORD="..."    # Gmail App Password
 export EMAIL_RECIPIENTS="a@b.com,c@d.com"
@@ -91,8 +91,7 @@ Go to **Settings → Secrets and variables → Actions → New repository secret
 | Secret name | Value |
 |-------------|-------|
 | `YOUTUBE_API_KEY` | Your YouTube Data API v3 key |
-| `ANTHROPIC_API_KEY` | Your Anthropic API key |
-| `OPENAI_API_KEY` | Your OpenAI API key (for Whisper transcription) |
+| `GEMINI_API_KEY` | Your Google Gemini API key |
 | `EMAIL_SENDER` | Your Gmail address |
 | `GMAIL_APP_PASSWORD` | Your Gmail App Password |
 | `EMAIL_RECIPIENTS` | Comma-separated list, e.g. `a@b.com,c@d.com` |
@@ -114,12 +113,11 @@ That's it. The workflow runs on schedule and also commits summaries back to the 
 1. Checks out the repo on an Ubuntu runner
 2. Installs Python 3.12, Node.js 20, ffmpeg
 3. Scans all 3 channels for videos from the past 7 days
-4. Downloads audio, transcribes via OpenAI Whisper API, summarises via Claude
+4. Downloads audio, transcribes and summarises via Gemini 2.5 Flash
 5. Sends the HTML email digest with .docx transcript attachments
 6. Uploads transcripts/summaries as downloadable GitHub Artifacts (retained 90 days)
 7. Commits summary .md files back to the repo
 
-**Why Whisper API instead of local Whisper?** GitHub Actions runners have 7 GB RAM and no GPU. The local `large-v3` model needs ~10 GB + GPU. The OpenAI Whisper API handles this at ~$0.006/minute of audio with no resource constraints.
 
 ### Alternative: Cron or daemon (self-hosted)
 
@@ -171,18 +169,16 @@ yt_summariser/
 - **Python 3.10+**
 - **Node.js 18+** (for DOCX generation)
 - **ffmpeg** (for audio processing)
-- **~10 GB disk** (Whisper large-v3 model download)
 
 ### API Keys Needed
 | Service | Purpose | Get it at |
 |---------|---------|-----------|
 | YouTube Data API v3 | Channel scanning | [Google Cloud Console](https://console.cloud.google.com/apis/credentials) |
-| Anthropic API | Claude summaries | [Anthropic Console](https://console.anthropic.com/settings/keys) |
+| Google Gemini API | Transcription + summaries | [Google AI Studio](https://aistudio.google.com/app/apikey) |
 | Gmail App Password | Email delivery | [Google Account](https://myaccount.google.com/apppasswords) |
 
 ## Notes
 
-- **Language**: Whisper `large-v3` provides the best accuracy for Indonesian (Bahasa Indonesia). The `medium` model is faster but less accurate for Indonesian.
-- **Costs**: Anthropic API charges per token. Typical video summary costs ~$0.01-0.03. YouTube Data API has a free daily quota of 10,000 units.
+- **Language**: Gemini 2.5 Flash transcribes Indonesian (Bahasa Indonesia) natively and handles long audio in a single API call.
+- **Costs**: Gemini 2.5 Flash has a free tier (1,500 requests/day) that covers this workload. YouTube Data API has a free daily quota of 10,000 units.
 - **No API fallback**: If `YOUTUBE_API_KEY` is not set, the system falls back to `yt-dlp` for video discovery (slower but no API key needed).
-- **Whisper API alternative**: Set `OPENAI_API_KEY` to use OpenAI's hosted Whisper API instead of the local model (faster, no GPU needed, but costs ~$0.006/minute).

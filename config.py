@@ -33,13 +33,13 @@ CHANNELS = [
 # ─── API Keys (set via environment variables) ──────────────────────
 # Export these in your shell or .env file:
 #   export YOUTUBE_API_KEY="your-youtube-data-api-v3-key"
-#   export ANTHROPIC_API_KEY="your-anthropic-api-key"
+#   export GEMINI_API_KEY="your-gemini-api-key"
 #   export GMAIL_APP_PASSWORD="your-gmail-app-password"
 
 import os
 
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY", "")
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 # ─── Email Config ──────────────────────────────────────────────────
 EMAIL_SENDER = os.getenv("EMAIL_SENDER", "your-email@gmail.com")
@@ -64,10 +64,8 @@ AUDIO_DIR = os.path.join(OUTPUT_DIR, "audio")
 for d in [OUTPUT_DIR, TRANSCRIPTS_DIR, SUMMARIES_DIR, AUDIO_DIR]:
     os.makedirs(d, exist_ok=True)
 
-# ─── Whisper Config ────────────────────────────────────────────────
-WHISPER_MODEL = "large-v3"  # Best for Indonesian language
-# Alternative: "medium" for faster processing, or use OpenAI Whisper API
-
-# ─── Claude Config ─────────────────────────────────────────────────
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+# ─── Gemini Config ─────────────────────────────────────────────────
+# Gemini 2.5 Flash handles both transcription (audio) and summarisation.
+# Free tier: 1,500 requests/day. Swap to "gemini-3.5-flash" for the newest model.
+GEMINI_MODEL = "gemini-2.5-flash"
 MAX_TOKENS = 8192

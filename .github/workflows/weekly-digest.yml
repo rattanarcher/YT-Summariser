@@ -7,8 +7,7 @@
 #
 # Required GitHub Secrets (Settings → Secrets and variables → Actions):
 #   YOUTUBE_API_KEY      — YouTube Data API v3
-#   ANTHROPIC_API_KEY    — Anthropic (Claude) API
-#   OPENAI_API_KEY       — OpenAI (Whisper API for transcription)
+#   GEMINI_API_KEY       — Google Gemini API (transcription + summaries)
 #   EMAIL_SENDER         — Gmail address
 #   GMAIL_APP_PASSWORD   — Gmail App Password
 #   EMAIL_RECIPIENTS     — Comma-separated recipient list
@@ -74,7 +73,7 @@ jobs:
 
       # ─── 7. Install Node.js dependencies ───────────────────────
       - name: Install docx (Node.js)
-        run: npm install -g docx
+        run: npm install docx
 
       # ─── 8. Set up YouTube cookies (if provided) ──────────────
       - name: Set up YouTube cookies
@@ -93,12 +92,10 @@ jobs:
       - name: Run weekly scan
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
-          USE_WHISPER_API: "true"
         run: |
           if [ -n "${{ inputs.single_url }}" ]; then
             echo "Processing single video: ${{ inputs.single_url }}"

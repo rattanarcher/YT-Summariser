@@ -8,7 +8,7 @@ Monitors Indonesian YouTube channels (Najwa Shihab, Akbar Faizal Uncensored,
 Prof. Rhenald Kasali) and produces weekly summaries with timestamped references.
 
 Requirements:
-    pip install yt-dlp openai-whisper anthropic google-api-python-client python-docx schedule
+    pip install yt-dlp google-genai google-api-python-client python-docx schedule
     # Also needs ffmpeg installed system-wide
 
 Usage:
@@ -36,9 +36,8 @@ from pathlib import Path
 from config import (
     CHANNELS,
     YOUTUBE_API_KEY,
-    ANTHROPIC_API_KEY,
-    WHISPER_MODEL,
-    CLAUDE_MODEL,
+    GEMINI_API_KEY,
+    GEMINI_MODEL,
     MAX_TOKENS,
     OUTPUT_DIR,
     TRANSCRIPTS_DIR,
@@ -232,141 +231,100 @@ def get_video_metadata(video_url: str) -> dict:
 
 
 # ═══════════════════════════════════════════════════════════════════
-# STEP 3: Transcribe Audio with Whisper
+# STEP 3: Transcribe Audio with Gemini
 # ═══════════════════════════════════════════════════════════════════
 
 def transcribe_audio(audio_path: str, language: str = "id") -> dict:
     """
-    Transcribe audio using OpenAI Whisper (local model).
+    Transcribe audio using Gemini 2.5 Flash via the File API.
+    Gemini handles long audio in a single call (no chunking needed).
     Returns dict with 'text' (full text) and 'segments' (timestamped).
-
-    For Indonesian content, use language="id" and model="large-v3".
     """
     try:
-        import whisper
+        from google import genai
     except ImportError:
-        print("  ⚠  openai-whisper not installed. Install with:")
-        print("     pip install openai-whisper")
+        print("  ⚠  google-genai not installed. Install with:")
+        print("     pip install google-genai")
         return {"text": "", "segments": []}
 
-    print(f"  🎙  Transcribing with Whisper ({WHISPER_MODEL})...")
-    print(f"      Language: {language} | File: {audio_path}")
+    if not GEMINI_API_KEY:
+        print("  ⚠  GEMINI_API_KEY not set.")
+        return {"text": "", "segments": []}
 
-    model = whisper.load_model(WHISPER_MODEL)
+    client = genai.Client(api_key=GEMINI_API_KEY)
+    file_size_mb = os.path.getsize(audio_path) / 1024 / 1024
+    print(f"  🎙  Transcribing via Gemini ({GEMINI_MODEL}, {file_size_mb:.1f} MB)...")
 
-    result = model.transcribe(
-        audio_path,
-        language=language,
-        task="transcribe",     # Keep in original language
-        verbose=False,
-        word_timestamps=True,  # Fine-grained timestamps
+    # Upload the audio file via the File API (handles large/long audio)
+    print(f"  ↑  Uploading audio to Gemini File API...")
+    uploaded = client.files.upload(file=audio_path)
+
+    # Wait for the file to finish processing
+    import time as _time
+    while uploaded.state.name == "PROCESSING":
+        _time.sleep(2)
+        uploaded = client.files.get(name=uploaded.name)
+
+    if uploaded.state.name == "FAILED":
+        print(f"  ⚠  Gemini file processing failed.")
+        return {"text": "", "segments": []}
+
+    prompt = (
+        "Transcribe this Indonesian-language audio in full. "
+        "Provide a timestamp at the start of each new segment or speaker turn. "
+        "Format each line exactly as: [MM:SS] transcribed text\n"
+        "Use [HH:MM:SS] format if the audio is longer than one hour. "
+        "Transcribe in the original Indonesian. Do not translate. "
+        "Do not add any commentary, headers, or notes. Only output the timestamped transcript."
     )
 
-    return result
+    print(f"  🤖  Generating transcript...")
+    response = client.models.generate_content(
+        model=GEMINI_MODEL,
+        contents=[uploaded, prompt],
+    )
 
+    # Clean up the uploaded file
+    try:
+        client.files.delete(name=uploaded.name)
+    except Exception:
+        pass
 
-def transcribe_audio_api(audio_path: str, language: str = "id") -> dict:
-    """
-    Use OpenAI Whisper API for transcription.
-    Automatically splits files larger than 24 MB into chunks.
-    Requires OPENAI_API_KEY environment variable.
-    """
-    import openai
+    transcript_text = response.text or ""
 
-    client = openai.OpenAI()
-    max_size = 24 * 1024 * 1024  # 24 MB (leave margin under 25 MB limit)
-    file_size = os.path.getsize(audio_path)
-
-    if file_size <= max_size:
-        # Small enough — transcribe directly
-        print(f"  🎙  Transcribing via Whisper API ({file_size / 1024 / 1024:.1f} MB)...")
-        return _transcribe_single_file(client, audio_path, language)
-
-    # File too large — split into chunks using ffmpeg
-    print(f"  🎙  File is {file_size / 1024 / 1024:.1f} MB (over 24 MB limit). Splitting into chunks...")
-    chunk_dir = os.path.join(os.path.dirname(audio_path), "chunks")
-    os.makedirs(chunk_dir, exist_ok=True)
-
-    base_name = os.path.splitext(os.path.basename(audio_path))[0]
-    chunk_pattern = os.path.join(chunk_dir, f"{base_name}_chunk_%03d.mp3")
-
-    # Split into 10-minute chunks
-    split_cmd = [
-        "ffmpeg", "-y", "-i", audio_path,
-        "-f", "segment",
-        "-segment_time", "600",  # 10 minutes per chunk
-        "-c", "copy",
-        chunk_pattern,
-    ]
-    subprocess.run(split_cmd, capture_output=True, text=True, timeout=300)
-
-    # Find all chunks and sort them
-    import glob
-    chunks = sorted(glob.glob(os.path.join(chunk_dir, f"{base_name}_chunk_*.mp3")))
-    print(f"  📦  Split into {len(chunks)} chunks")
-
-    # Transcribe each chunk and merge results
-    all_segments = []
-    all_text = []
-    time_offset = 0.0
-
-    for i, chunk_path in enumerate(chunks):
-        print(f"  🎙  Transcribing chunk {i + 1}/{len(chunks)}...")
-        chunk_result = _transcribe_single_file(client, chunk_path, language)
-
-        all_text.append(chunk_result.get("text", ""))
-        for seg in chunk_result.get("segments", []):
-            all_segments.append({
-                "start": seg["start"] + time_offset,
-                "end": seg["end"] + time_offset,
-                "text": seg["text"],
-            })
-
-        # Get duration of this chunk for offset calculation
-        probe_cmd = [
-            "ffprobe", "-v", "quiet",
-            "-show_entries", "format=duration",
-            "-of", "default=noprint_wrappers=1:nokey=1",
-            chunk_path,
-        ]
-        probe_result = subprocess.run(probe_cmd, capture_output=True, text=True, timeout=30)
-        try:
-            time_offset += float(probe_result.stdout.strip())
-        except ValueError:
-            time_offset += 600.0  # fallback: assume 10 minutes
-
-    # Clean up chunks
-    for chunk_path in chunks:
-        os.remove(chunk_path)
+    # Parse the [MM:SS] timestamped lines into segments
+    segments = _parse_timestamped_transcript(transcript_text)
 
     return {
-        "text": " ".join(all_text),
-        "segments": all_segments,
+        "text": " ".join(s["text"] for s in segments) if segments else transcript_text,
+        "segments": segments,
     }
 
 
-def _transcribe_single_file(client, audio_path: str, language: str) -> dict:
-    """Transcribe a single audio file via OpenAI Whisper API."""
-    with open(audio_path, "rb") as audio_file:
-        result = client.audio.transcriptions.create(
-            model="whisper-1",
-            file=audio_file,
-            language=language,
-            response_format="verbose_json",
-            timestamp_granularities=["segment"],
-        )
-
-    return {
-        "text": result.text,
-        "segments": [
-            {
-                "start": seg.start,
-                "end": seg.end,
-                "text": seg.text,
-            }
-            for seg in result.segments
-        ],
-    }
+def _parse_timestamped_transcript(text: str) -> list[dict]:
+    """
+    Parse Gemini's [MM:SS] or [HH:MM:SS] timestamped lines into segments
+    with start times in seconds.
+    """
+    segments = []
+    pattern = re.compile(r'^\s*\[(\d{1,2}):(\d{2})(?::(\d{2}))?\]\s*(.*)')
+    for line in text.split("\n"):
+        m = pattern.match(line)
+        if not m:
+            continue
+        g1, g2, g3, content = m.groups()
+        if g3 is not None:
+            # HH:MM:SS
+            start = int(g1) * 3600 + int(g2) * 60 + int(g3)
+        else:
+            # MM:SS
+            start = int(g1) * 60 + int(g2)
+        if content.strip():
+            segments.append({"start": float(start), "end": float(start), "text": content.strip()})
+    # Fill in end times from the next segment's start
+    for i in range(len(segments) - 1):
+        segments[i]["end"] = segments[i + 1]["start"]
+    return segments
 
 
 def format_timestamp(seconds: float) -> str:
@@ -381,7 +339,7 @@ def format_timestamp(seconds: float) -> str:
 
 def format_transcript_with_timestamps(transcription: dict) -> str:
     """
-    Format the Whisper transcription into a readable timestamped transcript.
+    Format the transcription into a readable timestamped transcript.
     Groups segments into ~30-second blocks for readability.
     """
     segments = transcription.get("segments", [])
@@ -427,23 +385,23 @@ def format_transcript_with_timestamps(transcription: dict) -> str:
 
 def generate_summary(transcript: str, video_title: str, channel_name: str) -> dict:
     """
-    Use Claude to generate two outputs:
+    Use Gemini to generate two outputs:
       1. email_summary — detailed overview with highlight paragraphs (no timestamps)
       2. detailed_analysis — key participants, timestamped points, quotes (for DOCX)
     Returns dict with both keys.
     """
     try:
-        import anthropic
+        from google import genai
     except ImportError:
-        print("  ⚠  anthropic package not installed. Install with:")
-        print("     pip install anthropic")
+        print("  ⚠  google-genai not installed. Install with:")
+        print("     pip install google-genai")
         return {"email_summary": "", "detailed_analysis": ""}
 
-    if not ANTHROPIC_API_KEY:
-        print("  ⚠  ANTHROPIC_API_KEY not set.")
+    if not GEMINI_API_KEY:
+        print("  ⚠  GEMINI_API_KEY not set.")
         return {"email_summary": "", "detailed_analysis": ""}
 
-    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    client = genai.Client(api_key=GEMINI_API_KEY)
 
     system_prompt = textwrap.dedent("""
         You are an expert analyst summarising Indonesian YouTube video content
@@ -497,18 +455,24 @@ def generate_summary(transcript: str, video_title: str, channel_name: str) -> di
 **Channel:** {channel_name}
 
 **Timestamped Transcript:**
-{transcript[:80000]}"""
+{transcript[:200000]}"""
 
-    print(f"  🤖  Generating AI summary with Claude...")
+    print(f"  🤖  Generating AI summary with Gemini...")
 
-    response = client.messages.create(
-        model=CLAUDE_MODEL,
-        max_tokens=MAX_TOKENS,
-        system=system_prompt,
-        messages=[{"role": "user", "content": user_prompt}],
-    )
-
-    full_output = response.content[0].text
+    try:
+        from google.genai import types
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=user_prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt,
+                max_output_tokens=MAX_TOKENS,
+            ),
+        )
+        full_output = response.text or ""
+    except Exception as e:
+        print(f"  ⚠  Gemini summary failed: {e}")
+        return {"email_summary": "", "detailed_analysis": ""}
 
     # Split into email summary and detailed analysis
     if "---SPLIT---" in full_output:
@@ -805,7 +769,7 @@ def send_weekly_email(summaries: list[dict], transcript_paths: list[str]):
         <div style="border-top: 1px solid #eee; padding-top: 12px; margin-top: 24px;
                     color: #999; font-size: 12px;">
             <p>Full transcripts are attached as .docx files.<br>
-            Generated by YouTube Video Summariser • Powered by Whisper + Claude</p>
+            Generated by YouTube Video Summariser • Powered by Gemini</p>
         </div>
         </body></html>
     """)
@@ -876,12 +840,9 @@ def process_video(video_url: str, channel_name: str = "", language: str = "id") 
     audio_path = download_audio(video_url)
     print(f"  ✓  Audio saved: {audio_path}")
 
-    # 3. Transcribe (use API on GitHub Actions / cloud, local model otherwise)
+    # 3. Transcribe (Gemini handles long audio in a single call)
     print("\n  STEP 3: Transcribing audio...")
-    if os.getenv("USE_WHISPER_API", "").lower() == "true":
-        transcription = transcribe_audio_api(audio_path, language=language)
-    else:
-        transcription = transcribe_audio(audio_path, language=language)
+    transcription = transcribe_audio(audio_path, language=language)
     print(f"  ✓  Transcription complete ({len(transcription.get('segments', []))} segments)")
 
     # 4. Format transcript
