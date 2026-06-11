@@ -1,0 +1,119 @@
+# ═══════════════════════════════════════════════════════════════════
+# Channel Archiver — Daily Bulk Processing
+# ═══════════════════════════════════════════════════════════════════
+#
+# Processes a batch of a channel's back-catalogue each day and commits
+# one DOCX per video into the repo under archive/<ChannelName>/.
+# Resumes automatically until the whole channel is archived.
+#
+# Set the channel below in the `CHANNEL` env, or trigger manually with
+# a custom channel from the Actions tab.
+#
+# Required GitHub Secrets:
+#   GEMINI_API_KEY       — Google Gemini API
+#   YOUTUBE_COOKIES      — (recommended) Netscape-format YouTube cookies
+# ═══════════════════════════════════════════════════════════════════
+
+name: Channel Archiver
+
+on:
+  schedule:
+    # Daily at 18:00 UTC (04:00 AEST). Off-peak helps avoid Gemini busy spikes.
+    - cron: "0 18 * * *"
+
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: "Channel handle or URL (e.g. @najwashihab)"
+        required: false
+        type: string
+      cap:
+        description: "Max videos to process this run"
+        required: false
+        type: string
+
+# Allow the workflow to commit results back to the repo
+permissions:
+  contents: write
+
+# Prevent overlapping runs (a long run must not collide with the next day's)
+concurrency:
+  group: channel-archiver
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350   # ~6 hours; GitHub's max is 360
+
+    env:
+      # ─── DEFAULT CHANNEL — change this to the channel you want to archive ───
+      CHANNEL: "@akbarfaizaluncensored"
+      # ─── Default per-run cap (videos). 100 videos = 200 Gemini requests. ───
+      CAP: "100"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      - name: Install Python packages
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install docx (Node.js)
+        run: npm install docx
+
+      - name: Set up YouTube cookies
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: |
+          if [ -n "$YOUTUBE_COOKIES" ]; then
+            echo "$YOUTUBE_COOKIES" > /tmp/youtube_cookies.txt
+            echo "YT_DLP_COOKIES=/tmp/youtube_cookies.txt" >> $GITHUB_ENV
+            echo "Cookies file created."
+          else
+            echo "No cookies provided — listing may be limited."
+          fi
+
+      - name: Run channel archiver
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          CH="${{ inputs.channel }}"
+          if [ -z "$CH" ]; then CH="$CHANNEL"; fi
+          CAP_VAL="${{ inputs.cap }}"
+          if [ -z "$CAP_VAL" ]; then CAP_VAL="$CAP"; fi
+          echo "Archiving channel: $CH (cap $CAP_VAL)"
+          python channel_archive.py --channel "$CH" --cap "$CAP_VAL"
+
+      - name: Commit archived documents
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add archive/ || true
+          git pull --no-edit --rebase || true
+          git diff --cached --quiet || git commit -m "Archive batch: $(date -u +'%Y-%m-%d %H:%M')"
+          git push || echo "Nothing to push"

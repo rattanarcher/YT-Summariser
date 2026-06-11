@@ -315,7 +315,8 @@ def transcribe_audio(audio_path: str, language: str = "id") -> dict:
 
     prompt = (
         "Transcribe this Indonesian-language audio in full. "
-        "Provide a timestamp at the start of each new segment or speaker turn. "
+        "Insert a timestamp at least every 15 to 30 seconds, and also at each "
+        "change of speaker. Put each timestamped segment on its own line. "
         "Format each line exactly as: [MM:SS] transcribed text\n"
         "Use [HH:MM:SS] format if the audio is longer than one hour. "
         "Transcribe in the original Indonesian. Do not translate. "
@@ -348,24 +349,33 @@ def transcribe_audio(audio_path: str, language: str = "id") -> dict:
 
 def _parse_timestamped_transcript(text: str) -> list[dict]:
     """
-    Parse Gemini's [MM:SS] or [HH:MM:SS] timestamped lines into segments
-    with start times in seconds.
+    Parse Gemini's [MM:SS] or [HH:MM:SS] timestamps into segments with start
+    times in seconds. Splits on EVERY timestamp marker wherever it appears
+    (start of line OR inline), so long unbroken blocks get broken up correctly.
     """
     segments = []
-    pattern = re.compile(r'^\s*\[(\d{1,2}):(\d{2})(?::(\d{2}))?\]\s*(.*)')
-    for line in text.split("\n"):
-        m = pattern.match(line)
-        if not m:
-            continue
-        g1, g2, g3, content = m.groups()
+    # Match a timestamp marker anywhere; capture the text up to the next marker
+    marker = re.compile(r'\[(\d{1,2}):(\d{2})(?::(\d{2}))?\]')
+
+    matches = list(marker.finditer(text))
+    if not matches:
+        return segments
+
+    for i, m in enumerate(matches):
+        g1, g2, g3 = m.group(1), m.group(2), m.group(3)
         if g3 is not None:
-            # HH:MM:SS
             start = int(g1) * 3600 + int(g2) * 60 + int(g3)
         else:
-            # MM:SS
             start = int(g1) * 60 + int(g2)
-        if content.strip():
-            segments.append({"start": float(start), "end": float(start), "text": content.strip()})
+        # Text runs from end of this marker to the start of the next marker
+        text_start = m.end()
+        text_end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        content = text[text_start:text_end].strip()
+        # Collapse internal whitespace/newlines into single spaces
+        content = re.sub(r'\s+', ' ', content)
+        if content:
+            segments.append({"start": float(start), "end": float(start), "text": content})
+
     # Fill in end times from the next segment's start
     for i in range(len(segments) - 1):
         segments[i]["end"] = segments[i + 1]["start"]
