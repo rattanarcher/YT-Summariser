@@ -188,7 +188,31 @@ def archive_video(video: dict, channel_name: str, out_dir: str) -> dict:
         combined_analysis += detailed_analysis
 
     create_transcript_docx(formatted, title, channel_name, video_url, docx_path, combined_analysis)
-    print(f"  ✓  Saved: {docx_name}")
+    print(f"  ✓  Saved DOCX: {docx_name}")
+
+    # Write JSON (machine-readable, for the research corpus)
+    json_name = f"{date_prefix}_{safe_title}_{video_id}.json"
+    json_path = os.path.join(out_dir, json_name)
+    record = {
+        "video_id": video_id,
+        "title": title,
+        "channel": channel_name,
+        "url": video_url,
+        "published_date": published,
+        "duration_seconds": duration,
+        "duration_readable": f"{duration // 60}m {duration % 60}s" if duration else "",
+        "archived_at": datetime.now().isoformat(),
+        "language": "id",
+        "summary": email_summary,
+        "detailed_analysis": detailed_analysis,
+        "transcript_segments": transcription.get("segments", []),
+        "transcript_text": " ".join(
+            s.get("text", "") for s in transcription.get("segments", [])
+        ),
+    }
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(record, f, indent=2, ensure_ascii=False)
+    print(f"  ✓  Saved JSON: {json_name}")
 
     # Clean up audio to save space
     try:
@@ -201,8 +225,65 @@ def archive_video(video: dict, channel_name: str, out_dir: str) -> dict:
         "video_id": video_id,
         "title": title,
         "docx": os.path.relpath(docx_path, ARCHIVE_DIR),
+        "json": os.path.relpath(json_path, ARCHIVE_DIR),
         "published": published,
+        "duration_seconds": duration,
+        "summary": email_summary,
     }
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Master index (CSV + JSON) for quick searching across the channel
+# ═══════════════════════════════════════════════════════════════════
+
+def build_master_index(progress: dict, channel_name: str, out_dir: str):
+    """
+    Build a master index of all archived videos as both JSON and CSV.
+    Stored at archive/<ChannelName>/_index.json and _index.csv
+    """
+    import csv
+
+    rows = []
+    for vid, info in progress.get("done", {}).items():
+        if info.get("skipped"):
+            continue  # don't index short/skipped videos
+        rows.append({
+            "video_id": vid,
+            "title": info.get("title", ""),
+            "published": info.get("published", ""),
+            "duration_seconds": info.get("duration_seconds", 0),
+            "url": info.get("url", f"https://www.youtube.com/watch?v={vid}"),
+            "docx": info.get("docx", ""),
+            "json": info.get("json", ""),
+            "summary": info.get("summary", ""),
+        })
+
+    # Sort by publish date (newest first)
+    rows.sort(key=lambda r: r.get("published", ""), reverse=True)
+
+    # JSON index
+    index_json = os.path.join(out_dir, "_index.json")
+    with open(index_json, "w", encoding="utf-8") as f:
+        json.dump({
+            "channel": channel_name,
+            "total_videos": len(rows),
+            "generated_at": datetime.now().isoformat(),
+            "videos": rows,
+        }, f, indent=2, ensure_ascii=False)
+
+    # CSV index (summary truncated for readability in spreadsheet)
+    index_csv = os.path.join(out_dir, "_index.csv")
+    with open(index_csv, "w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["video_id", "title", "published", "duration_seconds", "url", "docx", "json", "summary_preview"])
+        for r in rows:
+            preview = re.sub(r'\s+', ' ', r["summary"])[:300]
+            writer.writerow([
+                r["video_id"], r["title"], r["published"], r["duration_seconds"],
+                r["url"], r["docx"], r["json"], preview,
+            ])
+
+    print(f"  📑  Master index updated: {len(rows)} videos indexed")
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -261,7 +342,11 @@ def run_archive(channel: str, cap: int):
                 progress["done"][video["video_id"]] = {
                     "title": result.get("title", ""),
                     "docx": result.get("docx", ""),
+                    "json": result.get("json", ""),
                     "published": result.get("published", ""),
+                    "duration_seconds": result.get("duration_seconds", 0),
+                    "summary": result.get("summary", ""),
+                    "url": video["url"],
                     "archived_at": datetime.now().isoformat(),
                 }
                 progress.get("failed", {}).pop(video["video_id"], None)
@@ -302,6 +387,8 @@ def run_archive(channel: str, cap: int):
 
     # Final summary
     remaining = len([v for v in all_videos if v["video_id"] not in set(progress["done"].keys())])
+    # Rebuild the master index so it always reflects the latest state
+    build_master_index(progress, channel_name, out_dir)
     print(f"\n{'█' * 60}")
     print(f"  Run complete. Processed {processed} videos this run.")
     print(f"  Total archived: {len(progress['done'])} | Remaining: {remaining}")

@@ -354,8 +354,9 @@ def _parse_timestamped_transcript(text: str) -> list[dict]:
     (start of line OR inline), so long unbroken blocks get broken up correctly.
     """
     segments = []
-    # Match a timestamp marker anywhere; capture the text up to the next marker
-    marker = re.compile(r'\[(\d{1,2}):(\d{2})(?::(\d{2}))?\]')
+    # Match a timestamp marker anywhere; allow optional spaces inside brackets
+    # e.g. [00:00], [ 00:00 ], [1:02:44]
+    marker = re.compile(r'\[\s*(\d{1,2}):(\d{2})(?::(\d{2}))?\s*\]')
 
     matches = list(marker.finditer(text))
     if not matches:
