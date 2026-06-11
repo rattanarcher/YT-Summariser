@@ -234,7 +234,7 @@ def get_video_metadata(video_url: str) -> dict:
 # STEP 3: Transcribe Audio with Gemini
 # ═══════════════════════════════════════════════════════════════════
 
-def _gemini_generate_with_retry(client, model, contents, config=None, max_retries=6):
+def _gemini_generate_with_retry(client, model, contents, config=None, max_retries=3):
     """
     Call Gemini generate_content with exponential backoff retry.
     Retries on transient errors (503 overloaded, 429 rate limit, 500).
@@ -243,8 +243,9 @@ def _gemini_generate_with_retry(client, model, contents, config=None, max_retrie
     """
     import time as _time
 
-    # Try the primary model first, then fall back to alternates if it stays busy
-    fallback_models = [model, "gemini-2.5-flash-lite", "gemini-2.0-flash"]
+    # Try the primary model (flash-lite) first, then fall back to standard flash.
+    # NOTE: gemini-2.0-flash has zero free-tier quota, so it is NOT used here.
+    fallback_models = [model, "gemini-2.5-flash"]
     # De-duplicate while preserving order
     models_to_try = list(dict.fromkeys(fallback_models))
 
@@ -260,9 +261,15 @@ def _gemini_generate_with_retry(client, model, contents, config=None, max_retrie
             except Exception as e:
                 msg = str(e)
                 last_error = e
+                # Hard daily-quota exhaustion: limit 0 or per-day quota hit.
+                # No point retrying or falling back — the day's free quota is gone.
+                hard_quota = ("limit: 0" in msg) or ("PerDay" in msg) or ("GenerateRequestsPerDay" in msg)
+                if hard_quota and current_model == models_to_try[-1]:
+                    print(f"  🛑  Daily free-tier quota exhausted for all models.")
+                    raise
                 is_transient = any(code in msg for code in ["503", "429", "500", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "high demand"])
                 if is_transient and attempt < max_retries - 1:
-                    wait = min(2 ** (attempt + 2), 60)  # 4, 8, 16, 32, 60, 60 seconds
+                    wait = min(2 ** (attempt + 2), 60)  # 4, 8, 16, 32, 60 seconds
                     print(f"  ⏳  {current_model} busy (attempt {attempt + 1}/{max_retries}). Retrying in {wait}s...")
                     _time.sleep(wait)
                 elif is_transient:
