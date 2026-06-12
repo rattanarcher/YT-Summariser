@@ -287,9 +287,11 @@ def _gemini_generate_with_retry(client, model, contents, config=None, max_retrie
 
 def transcribe_audio(audio_path: str, language: str = "id") -> dict:
     """
-    Transcribe audio using Gemini 2.5 Flash via the File API.
-    Gemini handles long audio in a single call (no chunking needed).
-    Returns dict with 'text' (full text) and 'segments' (timestamped).
+    Transcribe audio using Gemini, chunking long files for reliability.
+    Long single-pass transcription causes Gemini to lose its place and repeat
+    earlier sections, so we split into fixed chunks, transcribe each separately
+    (clean per-chunk timestamps), and stitch with time offsets.
+    Returns dict with 'text' and 'segments' (timestamped, monotonic).
     """
     try:
         from google import genai
@@ -306,52 +308,116 @@ def transcribe_audio(audio_path: str, language: str = "id") -> dict:
     file_size_mb = os.path.getsize(audio_path) / 1024 / 1024
     print(f"  🎙  Transcribing via Gemini ({GEMINI_MODEL}, {file_size_mb:.1f} MB)...")
 
-    # Upload the audio file via the File API (handles large/long audio)
-    print(f"  ↑  Uploading audio to Gemini File API...")
-    uploaded = client.files.upload(file=audio_path)
+    # Get audio duration
+    duration = _get_audio_duration(audio_path)
+    chunk_length = 1800  # 30-minute chunks (held accurate to ~59 min in testing)
 
-    # Wait for the file to finish processing
+    # If short enough, transcribe in one pass; otherwise split
+    if duration <= chunk_length:
+        segs = _transcribe_chunk(client, audio_path, time_offset=0.0)
+        return {
+            "text": " ".join(s["text"] for s in segs),
+            "segments": segs,
+        }
+
+    # Split into chunks with ffmpeg
+    import glob
+    chunk_dir = os.path.join(os.path.dirname(audio_path), "chunks")
+    os.makedirs(chunk_dir, exist_ok=True)
+    base = os.path.splitext(os.path.basename(audio_path))[0]
+    chunk_pattern = os.path.join(chunk_dir, f"{base}_chunk_%03d.mp3")
+
+    split_cmd = [
+        "ffmpeg", "-y", "-i", audio_path,
+        "-f", "segment", "-segment_time", str(chunk_length),
+        "-c", "copy", chunk_pattern,
+    ]
+    subprocess.run(split_cmd, capture_output=True, text=True, timeout=300)
+    chunks = sorted(glob.glob(os.path.join(chunk_dir, f"{base}_chunk_*.mp3")))
+    print(f"  📦  Split into {len(chunks)} chunks of ~{chunk_length // 60} min each")
+
+    all_segments = []
+    time_offset = 0.0
+    for i, chunk_path in enumerate(chunks):
+        print(f"  🎙  Transcribing chunk {i + 1}/{len(chunks)}...")
+        chunk_segs = _transcribe_chunk(client, chunk_path, time_offset=time_offset)
+        all_segments.extend(chunk_segs)
+        # Advance the offset by this chunk's actual duration
+        time_offset += _get_audio_duration(chunk_path)
+
+    # Clean up chunk files
+    for c in chunks:
+        try:
+            os.remove(c)
+        except OSError:
+            pass
+
+    return {
+        "text": " ".join(s["text"] for s in all_segments),
+        "segments": all_segments,
+    }
+
+
+def _get_audio_duration(audio_path: str) -> float:
+    """Return audio duration in seconds via ffprobe."""
+    cmd = [
+        "ffprobe", "-v", "quiet",
+        "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1",
+        audio_path,
+    ]
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+        return float(result.stdout.strip())
+    except (ValueError, subprocess.SubprocessError):
+        return 0.0
+
+
+def _transcribe_chunk(client, audio_path: str, time_offset: float = 0.0) -> list[dict]:
+    """
+    Transcribe a single audio chunk and return segments with timestamps
+    shifted by time_offset (so chunk-local times become whole-video times).
+    """
     import time as _time
+
+    uploaded = client.files.upload(file=audio_path)
     while uploaded.state.name == "PROCESSING":
         _time.sleep(2)
         uploaded = client.files.get(name=uploaded.name)
-
     if uploaded.state.name == "FAILED":
-        print(f"  ⚠  Gemini file processing failed.")
-        return {"text": "", "segments": []}
+        print(f"  ⚠  Gemini file processing failed for chunk.")
+        return []
 
     prompt = (
         "Transcribe this Indonesian-language audio in full. "
-        "Insert a timestamp at least every 15 to 30 seconds, and also at each "
-        "change of speaker. Put each timestamped segment on its own line. "
+        "Insert a timestamp every 15 to 30 seconds and at each change of speaker. "
+        "Put each timestamped segment on its own line. "
         "Format each line exactly as: [MM:SS] transcribed text\n"
-        "Use [HH:MM:SS] format if the audio is longer than one hour. "
         "Transcribe in the original Indonesian. Do not translate. "
+        "Do not repeat earlier content. Transcribe strictly in chronological order, once. "
         "Do not add any commentary, headers, or notes. Only output the timestamped transcript."
     )
 
-    print(f"  🤖  Generating transcript...")
-    response = _gemini_generate_with_retry(
-        client,
-        model=GEMINI_MODEL,
-        contents=[uploaded, prompt],
-    )
+    response = _gemini_generate_with_retry(client, model=GEMINI_MODEL, contents=[uploaded, prompt])
 
-    # Clean up the uploaded file
     try:
         client.files.delete(name=uploaded.name)
     except Exception:
         pass
 
-    transcript_text = response.text or ""
-
-    # Parse the [MM:SS] timestamped lines into segments
-    segments = _parse_timestamped_transcript(transcript_text)
-
-    return {
-        "text": " ".join(s["text"] for s in segments) if segments else transcript_text,
-        "segments": segments,
-    }
+    segs = _parse_timestamped_transcript(response.text or "")
+    # Shift timestamps by the offset and drop any that exceed a sane chunk bound
+    shifted = []
+    for s in segs:
+        # Ignore obviously corrupt timestamps (well beyond a 30-min chunk = garbage)
+        if s["start"] > 2400:  # >40 min in a 30-min chunk = corrupt
+            continue
+        shifted.append({
+            "start": s["start"] + time_offset,
+            "end": s["end"] + time_offset,
+            "text": s["text"],
+        })
+    return shifted
 
 
 def _parse_timestamped_transcript(text: str) -> list[dict]:
