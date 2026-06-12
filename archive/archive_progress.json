@@ -142,8 +142,8 @@
   "failed": {
     "jAq8bfPi2bA": {
       "title": "KARNI 'PRESIDEN ILC' ILYAS. KESAKSIAN ATAS 7 PRESIDEN",
-      "reason": "Server disconnected without sending a response.",
-      "failed_at": "2026-06-11T21:32:34.238884"
+      "reason": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.",
+      "failed_at": "2026-06-12T01:04:40.616063"
     },
     "7eV637skqNE": {
       "title": "MENGGUGAT TENTAKEL POLITIK DEWAS BPJS. 1100 TRILIUN DANA PUBLIK JADI PERTARUHAN",
