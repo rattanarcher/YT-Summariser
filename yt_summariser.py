@@ -234,7 +234,7 @@ def get_video_metadata(video_url: str) -> dict:
 # STEP 3: Transcribe Audio with Gemini
 # ═══════════════════════════════════════════════════════════════════
 
-def _gemini_generate_with_retry(client, model, contents, config=None, max_retries=3):
+def _gemini_generate_with_retry(client, model, contents, config=None, max_retries=5):
     """
     Call Gemini generate_content with exponential backoff retry.
     Retries on transient errors (503 overloaded, 429 rate limit, 500).
@@ -243,9 +243,11 @@ def _gemini_generate_with_retry(client, model, contents, config=None, max_retrie
     """
     import time as _time
 
-    # Try the primary model (flash-lite) first, then fall back to standard flash.
-    # NOTE: gemini-2.0-flash has zero free-tier quota, so it is NOT used here.
-    fallback_models = [model, "gemini-2.5-flash"]
+    # Run entirely on the primary model (flash-lite, ~1,000 free requests/day).
+    # gemini-2.5-flash is deliberately NOT a fallback: its free tier is only
+    # 20 requests/day, so falling back to it exhausts almost immediately and
+    # stops the whole run. Better to retry flash-lite than burn flash's quota.
+    fallback_models = [model]
     # De-duplicate while preserving order
     models_to_try = list(dict.fromkeys(fallback_models))
 
