@@ -67,5 +67,5 @@ for d in [OUTPUT_DIR, TRANSCRIPTS_DIR, SUMMARIES_DIR, AUDIO_DIR]:
 # ─── Gemini Config ─────────────────────────────────────────────────
 # Gemini 2.5 Flash handles both transcription (audio) and summarisation.
 # Free tier: 1,500 requests/day. Swap to "gemini-3.5-flash" for the newest model.
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-2.5-flash-lite"
 MAX_TOKENS = 8192
