@@ -647,13 +647,13 @@
   "failed": {
     "_aIAZ4ZHk00": {
       "title": "RAMPAS SUBSIDI RAKYAT, AMRAN SULAIMAN BONGKAR CARA BISNIS KONGLOMERASI SERAKAHNOMIC. SIAPA MEREKA?",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:34:41.112239"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-07-05T19:46:20.316144"
     },
     "JDg3d3WlrA0": {
       "title": "DIRESHUFFLE, BUDI ARIE MANUVER MASUK GERINDRA. MENINGGALKAN JOKOWI ATAU SKENARIO PERSIAPAN GIBRAN?",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:34:52.713376"
+      "reason": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.",
+      "failed_at": "2026-07-05T19:49:35.139622"
     },
     "frG3MAr5_es": {
       "title": "PPP TENTANG ORANG BAIK DI BALIK ISLAH & KHIANAT JOKOWI. \"TAK ADA DEAL BAWAH MEJA DENGAN KUBU AGUS\"",
@@ -2857,13 +2857,13 @@
     },
     "5XhfSiJ9T2E": {
       "title": "YUNUS YOSFIAH, MANTAN KOMANDAN PRABOWO. \"KENAPA KITA BETAH DENGAN SISTEM GAJI RENDAH?\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:34:29.030649"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-07-05T19:42:43.685174"
     },
     "GrKdS98jImQ": {
       "title": "NADIEM MAKARIM: KEJAHATAN WHITE COLLAR CRIME TAK LAYAK MENDAPATKAN PERLINDUNGAN POLITIK",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:34:16.522662"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-07-05T19:39:13.022060"
     }
   },
   "channel": "@AkbarFaizalUncensored",
