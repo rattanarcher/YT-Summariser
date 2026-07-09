@@ -737,38 +737,38 @@
   "failed": {
     "eOhH8H5wmuE": {
       "title": "MEMBAHAYAKAN, FERRY MINTA MENKEU PURBAYA SEGERA DIGANTI. \"TINDAKANNYA BUKAN EKONOM, TAPI POLITISI\".",
-      "reason": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.",
-      "failed_at": "2026-07-08T20:06:22.278958"
+      "reason": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available. Please update your code to use a newer model for the latest features and improvements",
+      "failed_at": "2026-07-09T19:58:17.774102"
     },
     "ruFJnT1eDCI": {
       "title": "MENGGUGAT MBG, DADAN MENJAWAB KERAS. KERACUNAN HINGGA PEJABAT DAN ORGANISASI YANG IKUT BERMAIN DAPUR",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:36:04.038955"
+      "reason": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available. Please update your code to use a newer model for the latest features and improvements",
+      "failed_at": "2026-07-09T19:59:40.055271"
     },
     "xQCzu7J-g9c": {
       "title": "IDENTIFIKASI ARAH KEKUASAAN PRABOWO. ANGGARAN FANTASTIS MILITER HINGGA AMENDEMEN UUD 45",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:36:15.848705"
+      "reason": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available. Please update your code to use a newer model for the latest features and improvements",
+      "failed_at": "2026-07-09T20:01:07.610322"
     },
     "sgQyM3WCZJA": {
       "title": "SKANDAL IJAZAH SERI KEDUA. SETELAH JOKOWI, IJAZAH WAPRES GIBRAN KINI YANG DIGUGAT",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:36:27.908463"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-07-09T20:04:03.318218"
     },
     "6JFE5q870Kg": {
       "title": "TESTIMONI ELITE PARTAI KA'BAH JELANG MUKTAMAR. \"SAYA SAKSI BAGAIMANA JOKOWI MENGHANCURKAN PPP\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:36:39.335412"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-07-09T20:07:45.543583"
     },
     "8AoC3cYPfsU": {
       "title": "YUSRIL IHZA MAHENDRA KELUHKAN KUALITAS DPR. \"INI MOMENTUM REFORMASI POLITIK\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:36:51.071933"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-07-09T20:13:58.086738"
     },
     "TSozT3kg420": {
       "title": "PETA KONFLIK ELITE & INFILTRASI ASING. SKENARIO MAKAR DAN TERORISME DI BALIK DEMO BERDARAH",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:37:03.002479"
+      "reason": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.",
+      "failed_at": "2026-07-09T20:15:27.448164"
     },
     "ZkxV-zIy23A": {
       "title": "\"SUMBU UTAMA DEMO BERDARAH ITU ADALAH KEADILAN YANG TERKOYAK\"",
