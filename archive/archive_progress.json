@@ -947,438 +947,438 @@
   "failed": {
     "PvJW4g-j4YM": {
       "title": "AKBAR FAIZAL - ROCKY GERUNG TUNTASKAN PERDEBATAN LAMA. ALASAN MENGAPA JOKOWI DITINGGALKAN",
-      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-      "failed_at": "2026-07-16T19:29:41.303334"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T19:29:01.068047"
     },
     "RzVKeSz5ZFU": {
       "title": "KONFLIK AGAMA KERAP BERULANG. \"INSIDEN AGAMA SELALU TERKAIT KETIDAKADILAN EKONOMI\"",
-      "reason": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.",
-      "failed_at": "2026-07-16T19:44:09.356859"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T19:32:56.490015"
     },
     "K0QHXvymy3o": {
       "title": "PARPOL TERBELAH PEMISAHAN PEMILU SERENTAK. DPR DITUDING LAMBAT TANGKAP ASPIRASI",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:40:14.835569"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T19:36:52.612175"
     },
     "6BA5ACUeyLc": {
       "title": "PELAJARAN PENTING DARI PERANG IRAN - ISRAEL. RUDAL BALISTIK JADI PENENTU. TNI?",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:40:26.556289"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T19:40:48.301075"
     },
     "A4sJU6230iA": {
       "title": "BERISIKO, BANYAK WNI BANDEL TAK LAPOR DIRI. IRAN BAKAR ISRAEL, TRUMP SULUT API PERANG DUNIA III",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:40:38.381965"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T19:44:44.937882"
     },
     "3QdGrBWQCQw": {
       "title": "NEGARA DAN KAMPUS ABAIKAN RISET. TAWARAN KEKUASAAN JADI MAGNET",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:40:49.944429"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T19:48:40.551102"
     },
     "pXd0jBiic4E": {
       "title": "KASUS 4 PULAU ACEH, TERKUAK JEJAK MAKELAR MIGAS. INI NAMA, CARA KERJA & LOKASI SUMBER DAYA ALAMNYA",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:41:02.125589"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T19:52:36.383826"
     },
     "Dx3o-tQ4h74": {
       "title": "EKSKLUSIF‼️  NEGARA MENANG. 2,1 TON SABU DIBAKAR, JARINGAN KARTEL NARKOBA LUMPUH",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:41:14.235393"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T19:56:32.756143"
     },
     "392IR3M1uxo": {
       "title": "AKUISISI GRAB-GOTO BERLIKU. PROTEKSI KEPENTINGAN NASIONAL, PEMERINTAH VIA DANANTARA HARUS TERLIBAT",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:41:26.428555"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:00:30.217939"
     },
     "bdRL_mXo1OY": {
       "title": "PRABOWO SELAMATKAN RAJA AMPAT. ADA NAMA BESAR DI BALIK IZIN TAMBANG",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:41:38.256329"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:04:26.964075"
     },
     "Dd0qW-4RT9Y": {
       "title": "MENGGUGAT PENULISAN ULANG SEJARAH NASIONAL. JOKOWI MASUK BUKU SEJARAH, PENULIS MUNDUR",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:41:49.878542"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:08:22.330081"
     },
     "leoKool0lUk": {
       "title": "TIRU TNI, ASN MINTA PENSIUN 70 TAHUN. KORUPSI SEJAK PERENCANAAN, BIROKRASI TERJEBAK POLITIK",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:42:01.104538"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:12:18.821712"
     },
     "iM5t3fIHBEE": {
       "title": "TUNTUTAN KOMISI 10% OJOL. PERANG DAGANG APLIKATOR?",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:42:12.994165"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:16:14.603338"
     },
     "6oTuZra-_xg": {
       "title": "TNI AKHIRNYA BUKA SUARA. \"TANYA POLRI APA MEREKA KEBERATAN KEWENANGANNYA DIAMBIL\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:42:25.111700"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:20:11.038552"
     },
     "Gim2VYaAF8E": {
       "title": "KONTROVERSI KOPERASI MERAH PUTIH. MULIA PADA TUJUAN, KELIRU DALAM EKSEKUSI",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:42:37.037944"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:24:06.572855"
     },
     "uGanqFNrs1U": {
       "title": "KASAD KERAHKAN PASUKAN PERANG JAGA KEJAKSAAN. ANTISIPASI SERANGAN BALIK KONGLOMERAT HITAM???",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:42:49.346229"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:28:03.024986"
     },
     "27ITEuQDcz8": {
       "title": "AKTIFIS BERBALIK DUKUNG PRABOWO TAPI DESAK ANTEK JOKOWI DITENDANG. BEDA IDEOLOGI, TAK BISA DISATUKAN",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:43:00.921835"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:32:00.191938"
     },
     "k5NpfYD3MpY": {
       "title": "HENDROPRIYONO TUDING ADA PEREKAYASA. \"TINGGAL TUNGGU SENGKUNI. KUDETA SIPIL MENGANCAM\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:43:12.709140"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:35:55.646363"
     },
     "puhIp-Ce6BE": {
       "title": "'PAKSA' JAMES RIADY BERHADAPAN KONSUMEN MEIKARTA. SIAPA KONGLOMERAT TARGET ARA BERIKUTNYA?",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:43:24.781989"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:39:51.346433"
     },
     "G2ZKafUK9FU": {
       "title": "SEPAK TERJANG MENTERI GARIS KERAS PRABOWO. HAJAR KONGLOMERAT, PECAT PEJABAT, PIDANAKAN 411 ORANG",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:43:36.647184"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:43:47.774315"
     },
     "ydmZvCOiIc0": {
       "title": "JAUHKAN BUMN DARI JAKARTA. KHAWATIR AS DAN EROPA, KITA BUTUH FINANCIAL DIPLOMACY",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:43:48.669228"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:47:43.483737"
     },
     "0R6KSnmUxHk": {
       "title": "BIKIN TRUMP TAMPAK BODOH. CHINA TUNJUKKAN CARA MENJADI BANGSA PEMENANG. KITA?",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:44:00.587490"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:51:39.808974"
     },
     "NEqlzVOO4_s": {
       "title": "FERRY IRWANDI DITEROR: \"UU TNI HANYA UNTUK PARA JENDERAL..... TIDAK SEMUA ORANG BISA DIKENDALIKAN\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:44:12.229075"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:55:36.709976"
     },
     "KW7qq93hx98": {
       "title": "IJAZAH JOKOWI & DENDAM POLITIK LAMA: \"INI POLA PERMAINAN JOKOWI DEMI GIBRAN DI 2029\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:44:23.871246"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T20:59:32.498993"
     },
     "xcSyoLKezpU": {
       "title": "FERRY LATUHIHIN MENUDING. \"DIKELOLA PARA PEMAIN SAHAM, INSIDER TRADING POTENSIAL DI DANANTARA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:44:36.083282"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:03:28.988335"
     },
     "ndv9c2HzVmM": {
       "title": "#KABURAJADULU | KOMUNIKASI BURUK & PEMIKIRAN ANALOG PEMERINTAH BIKIN RESAH",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:44:47.993345"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:07:26.929103"
     },
     "u9FFoLEiAFg": {
       "title": "PERTARUHKAN 1,2 JUTA PEKERJA. TIM LOBI UNTUK TRUMP TAK BOLEH GAGAL",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:44:59.156184"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:11:22.392565"
     },
     "PdHOLKlnEac": {
       "title": "PANAS DINGIN POLITIK PASCA LEBARAN. GIBRAN JADI BEBAN BUAT PRESIDEN",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:45:10.587145"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:15:19.181495"
     },
     "GJDU0HAhSzU": {
       "title": "SAID AQIL SIROJ: \"MANIPULASI HABIB, SEJARAH ISLAM EKSTRIM DAN CAWE-CAWE JOKOWI DI NU\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:45:22.488416"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:19:15.802532"
     },
     "VxjGb7FnNf4": {
       "title": "\"MAHKAMAH MILITER ADILI TENTARA KSATRIA, BUKAN UNTUK KORUPTOR APALAGI PENYABUNG AYAM\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:45:34.030565"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:23:11.720714"
     },
     "0yDMxZv8T5o": {
       "title": "DITEROR LAGI, TEMPO & BOCOR ALUS BUKA ISI DAPUR. \"TAK ADA KEJAHATAN YANG SEMPURNA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:45:46.212165"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:27:07.564754"
     },
     "y7hdpjToGrQ": {
       "title": "RUU TNI TERLANJUR DIKETOK. \"INI PROBLEM & DEBAT SUBSTANSINYA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:45:57.789777"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:31:03.585550"
     },
     "uAbpBj0Q-bo": {
       "title": "SUJIWO TEJO: \"GOVERNMENT TERLALU RAKUS, TAPI RAKYAT JUGA PERLU DIKRITIK\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:46:08.953837"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:35:00.081680"
     },
     "s0Nsw6vR08M": {
       "title": "PANGKAT BARU LETKOL TEDDY AMPUTASI ATURAN MAIN. SIPIL GELISAH TNI ACAK-ACAK DIRI SENDIRI",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:46:20.701199"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:38:56.964462"
     },
     "Q5hgrwa4CjI": {
       "title": "DOKTOR BAHLIL DAN WAJAH AKADEMIK UI. KUASA, HARTA DAN INTELEKTUAL KENAPA MAU DIAMBIL SEMUA?",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:46:32.780827"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:42:53.772385"
     },
     "umTEzS6Wv8Q": {
       "title": "ANIES BASWEDAN: \"JANGAN BEREKSPERIMEN DENGAN BANGSA SENDIRI\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:46:44.266366"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:46:50.750169"
     },
     "sdvmcZtrTX8": {
       "title": "PERAN LEMIGAS, ESDM & BUMN. TANGAN SETAN INDUSTRI MINYAK & REINKARNASI PETRAL",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:46:56.189307"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:50:47.669252"
     },
     "hDXv0OLuTuI": {
       "title": "CONNIE R. BAKRIE. BABAK KEDUA DOKUMEN RUSIA",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:47:07.961383"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:54:43.455371"
     },
     "IyMhAvE9mH0": {
       "title": "'REBUTAN' KEWENANGAN PENYIDIKAN POLRI - KEJAKSAAN DALAM KUHAP. KEJAKSAAN MENUJU SUPERBODY?",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:47:21.257232"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T21:58:40.032511"
     },
     "Xd6WuMgZx7Q": {
       "title": "AGUAN DINYATAKAN TAK TERLIBAT PAGAR LAUT. SAID DIDU BUKA BUKTI BARU",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:47:33.221245"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:02:35.555291"
     },
     "2VgPUOaADDI": {
       "title": "DANANTARA, ENTITAS BISNIS ATAU PRODUK POLITIK? \"SENJATA PRABOWO TANPA PELURU\".",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:47:45.310720"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:06:31.379018"
     },
     "P0wVbwmxU24": {
       "title": "ISTANA TUDING ADA YANG BLACK CAMPAIGN SOAL PEMOTONGAN ANGGARAN",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:47:57.098235"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:10:28.016372"
     },
     "qDYMI79hSgM": {
       "title": "EKS DIRUT GARUDA BUKA-BUKAAN. \"PREMANISME, KORUPSI, HINGGA TAK PEDULI DENGAN PENUMPANG\".",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:48:08.891902"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:14:24.910845"
     },
     "cxGucF5Ij5w": {
       "title": "KAMPUS BEDA SIKAP SOAL IZIN TAMBANG. \"LEBIH BAIK KAMI KELOLA KETIMBANG DIRAMPOK PENGUSAHA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:48:20.442983"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:18:21.181145"
     },
     "YVTznDCMb8E": {
       "title": "PELANTIKAN DIPERCEPAT. SETENGAH HASIL PILKADA DIGUGAT, PEMERINTAH AKUI KERUSAKAN SISTEM PEMILU",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:48:31.770772"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:22:16.502552"
     },
     "WyvkoyYMMcY": {
       "title": "LITBANG KOMPAS VERSUS CELIOS. \"SURVEI MANA YANG BERMAIN API?\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:48:43.700399"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:26:13.041082"
     },
     "BMbIwcgxr7k": {
       "title": "MENTERI KKP BUKA SUARA SOAL PAGAR LAUT: \"TAK ADA TOLERANSI, TAK ADA KOMPROMI\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:48:55.600357"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:30:09.850132"
     },
     "cowkOpQs_e0": {
       "title": "PANDU SJAHRIR BUKA-BUKAAN. \"SAHAM OPUNG LUHUT, DANANTARA HINGGA KELOLA DANA 5 MILIAR DOLAR\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:49:07.518708"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:34:06.784145"
     },
     "92j2NHWUnmI": {
       "title": "100 HARI PEMERINTAHAN PRABOWO. KEPERCAYAAN PUBLIK LEBIH TINGGI DIBANDING JOKOWI",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:49:19.548186"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:38:04.108482"
     },
     "WOgF6sSMmbo": {
       "title": "\"IKN: KOTA BERTEKNOLOGI TERBAIK DUNIA DIBAYANGI GAGAL LANJUT\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:49:31.647518"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:42:01.073162"
     },
     "A5hVh0XnhHM": {
       "title": "DADAN HINDAYANA, KEPALA BADAN GIZI NASIONAL. \"MENJAWAB GUGATAN MAKAN BERGIZI GRATIS\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:49:43.394703"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:45:58.166877"
     },
     "i1X9bsyaCRs": {
       "title": "SEJARAH BARU KOTA ASIA AFRIKA. \"PENYIAR RADIO JADI WALIKOTA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:49:55.642071"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:49:53.592282"
     },
     "Kz5qrpNAqQQ": {
       "title": "MONGOL SIAP TARUNG BUPATI 2029. KOMIKA TERMAHAL MAIN POLITIK",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:50:06.841832"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:53:49.651552"
     },
     "o1lUNXWY0hA": {
       "title": "PPN 12% YANG TAK ADIL: \"AGRESIF KE RAKYAT KECIL, GAGAP HADAPI ORANG KAYA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:50:18.657875"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T22:57:45.366318"
     },
     "0dMEJw-I17c": {
       "title": "WACANAKAN PILKADA KEMBALI DIPILIH DPRD. \"PRABOWO GAK NGERTI DEMOKRASI. TAHUNYA ILMU PERANG\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:50:30.155103"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:01:41.886509"
     },
     "xpeJte5tjuk": {
       "title": "MISKIN LITERASI, PENDAKWAH AKAN DISERTIFIKASI. \"MEMBOSANKAN, SOK TAHU HINGGA PEMBODOHAN\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:50:41.879716"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:05:37.578310"
     },
     "UNL05htvqHM": {
       "title": "YANG TERTAWA DAN YANG MENANGIS DI PILKADA. \"BANYAK LUBANG HUKUM\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:50:53.725630"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:09:34.257912"
     },
     "gtdqaddWNBM": {
       "title": "DHARMA PONGREKUN 'GUGAT' DUA PRESIDEN DI PILKADA. \"HASIL PASTI BEDA KALAU TARUNG SECARA JANTAN\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:51:05.702052"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:13:30.933163"
     },
     "OzH5_ZyXW6U": {
       "title": "MASUK AREA POLITIK, POLRI DITARIK KE MASA LALU. MENGGUGAT RELASI KUASA JOKOWI - ELIT POLRI",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:51:17.506139"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:17:27.681885"
     },
     "SEjlba9-FHg": {
       "title": "KORBAN BERJATUHAN, PASAL KARET UU TIPIKOR DI-MK-KAN. HOTASI, RJ LINO HINGGA TOM LEMBONG",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:51:30.013940"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:21:24.258239"
     },
     "KkA6PmRNHtI": {
       "title": "UNTUNG RUGI INDONESIA GABUNG BRICS. BUKAN RUSIA TAPI FAKTOR EKONOMI CHINA YANG HARUS DIHITUNG",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:51:41.785003"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:25:21.057302"
     },
     "DstF65daoyc": {
       "title": "SUNDA WIWITAN MENANG TELAK DI JAWA BARAT. DEDI MULYADI PECUNDANGI POLITIK AGAMA",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:51:53.399058"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:29:17.249572"
     },
     "z7VnxMThv8M": {
       "title": "ANALISIS KOMUNIKASI POLITIK KANDIDAT PILKADA. HAMPIR SEMUA SALAH STRATEGI",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:52:05.086448"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:33:13.727928"
     },
     "rUHp53xY0eo": {
       "title": "CONNIE SEBUT SEKJEN PDIP SEGERA TERSANGKA. HASTO UNGKAP JOKOWI OTAK KRIMINALISASI ANIES",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:52:16.597581"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:37:10.260765"
     },
     "aIDRhfTmHRY": {
       "title": "BONGKAR-BONGKARAN JUDOL. \"KOMINFO JADI LADANG PERTEMPURAN BANDAR JUDI ONLINE\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:52:28.537134"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:41:06.654262"
     },
     "AZ2GHYB5t70": {
       "title": "KEPUTUSAN BERANI SOAL BATAS WILAYAH KONFLIK LAUT NATUNA. PRABOWO 'BERDAMAI' DENGAN CHINA?",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:52:40.127479"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:45:02.569166"
     },
     "yCz_yh1bckA": {
       "title": "RISMA DIKEROYOK, RISMA 'MELAWAN'. RISMA: \"TUHAN TAKKAN PERNAH DIAM\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:52:51.841424"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:48:58.541208"
     },
     "d7dkaCqCz8E": {
       "title": "TUDING ADA PEMAIN DALAM PAILIT SRITEX. \"SAYA PILIH DIPECAT KALAU TAK BISA BERANTAS PARA BEDEBAH INI\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:53:03.702098"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:52:55.751685"
     },
     "VEeU-gkmww0": {
       "title": "UTANG MELEDAK, JOKOWI 'LINDUNGI' PENAMBANG BATUBARA. \"KELAS MENENGAH HILANG, DEMOKRASI MELEMAH\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:53:14.845191"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T23:56:52.729923"
     },
     "IJOTHwIVdWE": {
       "title": "KORUPSI MENINGKAT DI AKHIR PERIODE JOKOWI: \"KEGAGALAN BERHUKUM KITA TAK PERNAH DIAKUI NEGARA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:53:26.241618"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:00:48.290644"
     },
     "yEkUUT2V_bA": {
       "title": "RESPON POLITIK RUSAK JOKOWI KEDUA. \"KABINET GENDUT PRABOWO AKAN JADI LAME DUCK DI TAHUN PERTAMA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:53:37.647427"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:04:44.902473"
     },
     "f0rwiJ2GeOc": {
       "title": "DEBAT QODARI - HENDRI SATRIO TENTANG KABINET GEMUK. CAWE - CAWE JOKOWI DIHADAPAN KESABARAN PRABOWO",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:53:48.982670"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:08:41.190484"
     },
     "sKGMxYYWUSI": {
       "title": "DARI PRESIDEN HINGGA 280 JUTA RAKYAT INDONESIA BERDOSA. \"PRABOWO HARUS TERAPKAN AMNESTI HUKUM\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:54:00.553827"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:12:37.810737"
     },
     "VuLvhxFh3i4": {
       "title": "POLITISASI MUTASI PERWIRA TINGGI TNI. JOKOWI PILIH KEDEKATAN KETIMBANG KOMPETENSI",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:54:12.836587"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:16:34.925598"
     },
     "dT0zuOcHtaE": {
       "title": "PERTARUNGAN SENYAP PEMILIHAN PIMPINAN KPK YANG BARU. \"PRABOWO YANG BERHAK, BUKAN JOKOWI\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:54:24.418448"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:20:32.054124"
     },
     "hZXtclHBfcI": {
       "title": "SERANGAN LANGSUNG IRAN KE ISRAEL. PERANG DUNIA KE-3 DIMULAI??",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:54:36.149569"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:24:28.927118"
     },
     "yp450V6KVP0": {
       "title": "MENGGUGAT RIDWAN KAMIL - SUSWONO: KOTA YANG STRES, KUE KEKUASAAN, HINGGA MENGGESER ANIES",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:54:47.904339"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:28:25.700712"
     },
     "ACcKOP05Yzc": {
       "title": "SKANDAL FUFUFAFA & PRIVATE JET: \"KAESANG, GIBRAN & MENKOMINFO BOHONG. KPK TAK NIAT BEKERJA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:54:59.858864"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:32:23.019249"
     },
     "KieuaQ1aOOg": {
       "title": "PERSETERUAN MEREK. \"PUNYA HAK MEREK TAPI DIKRIMINALISASI. SALAH SIAPA?\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:55:11.267466"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:36:19.186275"
     },
     "89ujg-0Oaso": {
       "title": "HUKUMAN BAGI PEMIMPIN LANGGAR SUMPAH: \"TAK ADA MAAF, KESAMPINGKAN JASANYA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:55:23.056042"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:40:14.541484"
     },
     "0qCshNGiciQ": {
       "title": "TAK GENTAR HADAPI KOALISI BESAR: \"9 NAGA TAK BISA MENDIKTE SAYA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:55:34.664377"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:44:11.680439"
     },
     "rOP86K2cxfs": {
       "title": "BANTAH JOKOWI CIPTAKAN KERUSAKAN: \"JANGAN SOK SUCI, TANGGUNG MASALAH INI BERSAMA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:55:46.419272"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:48:08.212976"
     },
     "lp6ywTTMakg": {
       "title": "MAHFUD MD NAIKKAN TEMPO PERTARUNGAN: \"JOKOWI PALING BERTANGGUNG JAWAB\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:55:58.134048"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:52:04.878187"
     },
     "5lwFxCd1o3Q": {
       "title": "DANA PARTAI DISOAL, NU MAU AMBIL ALIH PKB. \"CAK IMIN DILARANG KERAS JADI KETUM LAGI\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:56:09.862132"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:56:02.146912"
     },
     "IQJwklJlUcs": {
       "title": "DEMO, ANAK TANGAN KANAN SOEHARTO DISIKSA APARAT. \"SAYA MELAWAN GIBRAN, KAESANG, BOBBY DAN BAPAKNYA\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:56:21.321339"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T00:59:58.656579"
     },
     "fnzX60OxUhU": {
       "title": "MAHKAMAH KONSTITUSI BUAT KOALISI PILKADA BERANTAKAN",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:56:33.116383"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T01:03:55.901476"
     },
     "XJtNXViXEmw": {
       "title": "KERAS BUNGKAM SUARA NEGATIF TENTANG JOKOWI: \"SAYA MEWAKILI PUBLIK YANG RASIONAL\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T19:56:44.445960"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-18T01:07:52.400886"
     },
     "2810qG_sFIY": {
       "title": "[SPESIAL HUT RI] PERCAKAPAN JIWA-JIWA 79 TAHUN MERDEKA. \"SAYA INGATKAN JANGAN SAMPAI RAKYAT MARAH\"",
@@ -3027,8 +3027,8 @@
     },
     "kRDgmgPzrGY": {
       "title": "BARANG BUKTI DAN JEJAK KASUS TAK TERBANTAHKAN. SANDIWARA KASUS FEBRIE JAMPIDSUS KETERLALUAN",
-      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-      "failed_at": "2026-07-16T19:26:27.860449"
+      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqal.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
+      "failed_at": "2026-07-17T19:25:04.682687"
     }
   },
   "channel": "@AkbarFaizalUncensored",
