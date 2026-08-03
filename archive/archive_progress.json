@@ -1677,28 +1677,28 @@
   "failed": {
     "VEeU-gkmww0": {
       "title": "UTANG MELEDAK, JOKOWI 'LINDUNGI' PENAMBANG BATUBARA. \"KELAS MENENGAH HILANG, DEMOKRASI MELEMAH\"",
-      "reason": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.",
-      "failed_at": "2026-08-02T19:56:25.583038"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-08-03T19:50:47.977024"
     },
     "IJOTHwIVdWE": {
       "title": "KORUPSI MENINGKAT DI AKHIR PERIODE JOKOWI: \"KEGAGALAN BERHUKUM KITA TAK PERNAH DIAKUI NEGARA\"",
-      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
-      "failed_at": "2026-07-18T00:00:48.290644"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-08-03T19:54:05.228507"
     },
     "yEkUUT2V_bA": {
       "title": "RESPON POLITIK RUSAK JOKOWI KEDUA. \"KABINET GENDUT PRABOWO AKAN JADI LAME DUCK DI TAHUN PERTAMA\"",
-      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
-      "failed_at": "2026-07-18T00:04:44.902473"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-08-03T19:57:47.522877"
     },
     "f0rwiJ2GeOc": {
       "title": "DEBAT QODARI - HENDRI SATRIO TENTANG KABINET GEMUK. CAWE - CAWE JOKOWI DIHADAPAN KESABARAN PRABOWO",
-      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr1---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
-      "failed_at": "2026-07-18T00:08:41.190484"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-08-03T20:01:51.565436"
     },
     "sKGMxYYWUSI": {
       "title": "DARI PRESIDEN HINGGA 280 JUTA RAKYAT INDONESIA BERDOSA. \"PRABOWO HARUS TERAPKAN AMNESTI HUKUM\"",
-      "reason": "yt-dlp failed: ERROR: \n[download] Got error: HTTPSConnection(host='rr2---sn-uphho-hqae.googlevideo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable. Giving up ",
-      "failed_at": "2026-07-18T00:12:37.810737"
+      "reason": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.",
+      "failed_at": "2026-08-03T20:03:34.579784"
     },
     "VuLvhxFh3i4": {
       "title": "POLITISASI MUTASI PERWIRA TINGGI TNI. JOKOWI PILIH KEDEKATAN KETIMBANG KOMPETENSI",
