@@ -2918,22 +2918,22 @@
     "b6QEHtSreYU": {
       "title": "ANHAR GONGGONG: SEJARAH KORUPSI POLITIK INDONESIA",
       "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-      "failed_at": "2026-09-01T21:08:24.292822"
+      "failed_at": "2026-09-02T20:59:32.015042"
     },
     "pnI12U41dDk": {
       "title": "\"GOLKAR DIOKUPASI DARI DALAM DAN LUAR. MAMPUKAH AIRLANGGA BERTAHAN?\"",
-      "reason": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.",
-      "failed_at": "2026-09-01T21:16:09.743304"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-09-02T21:03:17.113427"
     },
     "Q4B7DjLsgR4": {
       "title": "\"SAYA DUKUNG LUHUT. AIRLANGGA HARUS MUNDUR\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T20:16:30.038769"
+      "reason": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "failed_at": "2026-09-02T21:08:24.266304"
     },
     "5dOL1zXag4A": {
       "title": "\"MENDEBAT TIGA POLITISI PEREMPUAN\"",
-      "reason": "yt-dlp failed: ERROR: unable to download video data: HTTP Error 403: Forbidden\n",
-      "failed_at": "2026-07-04T20:16:41.838398"
+      "reason": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.",
+      "failed_at": "2026-09-02T21:13:16.331988"
     },
     "l954ddpkMaE": {
       "title": "BUDIMAN SUDJATMIKO MANUVER SIAP DIPECAT: \"PRABOWO DIRANGKUL KALAU MAU MENANG. BUKAN DIGEBUK\"",
