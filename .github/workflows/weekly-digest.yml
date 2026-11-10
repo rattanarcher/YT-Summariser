@@ -20,8 +20,9 @@
 name: Weekly YouTube Digest
 
 on:
-  schedule:
-    - cron: "0 21 * * 0"
+  # schedule:
+    # Disabled: YouTube blocks GitHub IPs. Runs locally via run_weekly.bat.
+    # - cron: "0 21 * * 0"
 
   workflow_dispatch:
     inputs:

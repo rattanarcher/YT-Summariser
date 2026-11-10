@@ -112,7 +112,7 @@ def get_recent_videos_ytdlp(channel_handle: str, days: int = 7) -> list[dict]:
     ]
 
     # Add cookies if available
-    cookies_path = os.getenv("YT_DLP_COOKIES", "")
+    cookies_path = os.getenv("YT_DLP_COOKIES", "") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "cookies.txt")
     if cookies_path and os.path.exists(cookies_path):
         cmd.extend(["--cookies", cookies_path])
 
@@ -184,7 +184,7 @@ def download_audio(video_url: str, output_dir: str = AUDIO_DIR) -> str:
     ]
 
     # Add cookies if available (needed for GitHub Actions / cloud runners)
-    cookies_path = os.getenv("YT_DLP_COOKIES", "")
+    cookies_path = os.getenv("YT_DLP_COOKIES", "") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "cookies.txt")
     if cookies_path and os.path.exists(cookies_path):
         cmd.extend(["--cookies", cookies_path])
 
@@ -218,7 +218,7 @@ def get_video_metadata(video_url: str) -> dict:
         "--remote-components", "ejs:github",
     ]
 
-    cookies_path = os.getenv("YT_DLP_COOKIES", "")
+    cookies_path = os.getenv("YT_DLP_COOKIES", "") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "cookies.txt")
     if cookies_path and os.path.exists(cookies_path):
         cmd.extend(["--cookies", cookies_path])
 
@@ -234,22 +234,23 @@ def get_video_metadata(video_url: str) -> dict:
 # STEP 3: Transcribe Audio with Gemini
 # ═══════════════════════════════════════════════════════════════════
 
-def _gemini_generate_with_retry(client, model, contents, config=None, max_retries=5):
+def _gemini_generate_with_retry(client, model, contents, config=None, max_retries=6):
     """
-    Call Gemini generate_content with exponential backoff retry.
-    Retries on transient errors (503 overloaded, 429 rate limit, 500).
-    If the primary model stays overloaded, falls back to alternate models
-    that often have spare capacity.
+    Call Gemini generate_content, riding out free-tier overload.
+
+    - Retries the primary model (flash-lite) patiently: waits of 15s, 30s, 60s,
+      then 2 min, for about 5.5 minutes in total. Free-tier 503 spikes usually
+      clear within a few minutes.
+    - If flash-lite is still down, falls back to gemini-2.5-flash. Its free
+      quota is small (20 requests/day), so it is only a last resort, never the
+      first choice.
+    - A daily-quota error on one model moves straight to the next model
+      instead of retrying uselessly.
     """
     import time as _time
 
-    # Run entirely on the primary model (flash-lite, ~1,000 free requests/day).
-    # gemini-2.5-flash is deliberately NOT a fallback: its free tier is only
-    # 20 requests/day, so falling back to it exhausts almost immediately and
-    # stops the whole run. Better to retry flash-lite than burn flash's quota.
-    fallback_models = [model]
-    # De-duplicate while preserving order
-    models_to_try = list(dict.fromkeys(fallback_models))
+    models_to_try = list(dict.fromkeys([model, "gemini-2.5-flash"]))
+    waits = [15, 30, 60, 120, 120]
 
     last_error = None
     for model_idx, current_model in enumerate(models_to_try):
@@ -263,25 +264,19 @@ def _gemini_generate_with_retry(client, model, contents, config=None, max_retrie
             except Exception as e:
                 msg = str(e)
                 last_error = e
-                # Hard daily-quota exhaustion: limit 0 or per-day quota hit.
-                # No point retrying or falling back — the day's free quota is gone.
-                hard_quota = ("limit: 0" in msg) or ("PerDay" in msg) or ("GenerateRequestsPerDay" in msg)
-                if hard_quota and current_model == models_to_try[-1]:
-                    print(f"  🛑  Daily free-tier quota exhausted for all models.")
-                    raise
+                hard_quota = ("limit: 0" in msg) or ("PerDay" in msg)
+                if hard_quota:
+                    print(f"  🛑  Daily free-tier quota used up for {current_model}.")
+                    break  # try the next model, if any
                 is_transient = any(code in msg for code in ["503", "429", "500", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "high demand"])
-                if is_transient and attempt < max_retries - 1:
-                    wait = min(2 ** (attempt + 2), 60)  # 4, 8, 16, 32, 60 seconds
+                if not is_transient:
+                    raise
+                if attempt < max_retries - 1:
+                    wait = waits[min(attempt, len(waits) - 1)]
                     print(f"  ⏳  {current_model} busy (attempt {attempt + 1}/{max_retries}). Retrying in {wait}s...")
                     _time.sleep(wait)
-                elif is_transient:
-                    # Exhausted retries on this model — break to try the next fallback
-                    print(f"  ⚠  {current_model} still unavailable after {max_retries} attempts.")
-                    break
                 else:
-                    # Non-transient error — don't retry or fall back
-                    raise
-    # All models and retries exhausted
+                    print(f"  ⚠  {current_model} still unavailable after {max_retries} attempts.")
     if last_error:
         raise last_error
     raise RuntimeError("Gemini generate_content failed after retries")
@@ -358,6 +353,29 @@ def transcribe_audio(audio_path: str, language: str = "id") -> dict:
         "text": " ".join(s["text"] for s in all_segments),
         "segments": all_segments,
     }
+
+
+def transcribe_audio_cached(audio_path: str, language: str = "id") -> dict:
+    """
+    Transcribe, but save the result next to the audio file first time round.
+    If a later step crashes, re-running reuses the saved transcript instead of
+    spending Gemini quota transcribing the same audio again.
+    """
+    cache_path = os.path.splitext(audio_path)[0] + ".transcript.json"
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, encoding="utf-8") as f:
+                cached = json.load(f)
+            if cached.get("segments"):
+                print(f"  ✓  Reusing saved transcript: {os.path.basename(cache_path)}")
+                return cached
+        except (json.JSONDecodeError, OSError):
+            pass
+    result = transcribe_audio(audio_path, language=language)
+    if result.get("segments"):
+        with open(cache_path, "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False)
+    return result
 
 
 def _get_audio_duration(audio_path: str) -> float:
@@ -636,9 +654,14 @@ def create_transcript_docx(
 ):
     """Create a formatted Word document with detailed analysis + full transcript."""
     # Write both content files for the JS script
-    with open("/tmp/transcript_content.txt", "w") as f:
+    import tempfile
+    _tmp = tempfile.gettempdir()
+    t_path = os.path.join(_tmp, "transcript_content.txt")
+    a_path = os.path.join(_tmp, "analysis_content.txt")
+    js_path = os.path.join(_tmp, "create_transcript.js")
+    with open(t_path, "w", encoding="utf-8", newline="") as f:
         f.write(transcript_text)
-    with open("/tmp/analysis_content.txt", "w") as f:
+    with open(a_path, "w", encoding="utf-8", newline="") as f:
         f.write(detailed_analysis)
 
     js_code = f"""
@@ -646,10 +669,10 @@ const {{ Document, Packer, Paragraph, TextRun, HeadingLevel,
          AlignmentType, BorderStyle }} = require('docx');
 const fs = require('fs');
 
-const transcript = fs.readFileSync('/tmp/transcript_content.txt', 'utf8');
-const analysis = fs.readFileSync('/tmp/analysis_content.txt', 'utf8');
-const transcriptLines = transcript.split('\\n\\n');
-const analysisLines = analysis.split('\\n');
+const transcript = fs.readFileSync({json.dumps(t_path)}, 'utf8');
+const analysis = fs.readFileSync({json.dumps(a_path)}, 'utf8');
+const transcriptLines = transcript.split(/\\r?\\n\\s*\\r?\\n/);
+const analysisLines = analysis.split(/\\r?\\n/);
 
 const children = [
     new Paragraph({{
@@ -779,7 +802,7 @@ Packer.toBuffer(doc).then(buffer => {{
 }});
 """
 
-    with open("/tmp/create_transcript.js", "w") as f:
+    with open(js_path, "w", encoding="utf-8") as f:
         f.write(js_code)
 
     # Look for node_modules in the working directory (where npm install runs)
@@ -792,14 +815,21 @@ Packer.toBuffer(doc).then(buffer => {{
     if os.path.isdir(local_node_modules):
         node_paths.append(local_node_modules)
     # Also check global
-    global_result = subprocess.run(["npm", "root", "-g"], capture_output=True, text=True)
-    if global_result.returncode == 0 and global_result.stdout.strip():
-        node_paths.append(global_result.stdout.strip())
+    # Global npm folder is optional; on Windows npm is npm.cmd, so look it up
+    import shutil
+    npm_exe = shutil.which("npm")
+    if npm_exe:
+        try:
+            global_result = subprocess.run([npm_exe, "root", "-g"], capture_output=True, text=True)
+            if global_result.returncode == 0 and global_result.stdout.strip():
+                node_paths.append(global_result.stdout.strip())
+        except OSError:
+            pass
     if node_paths:
         node_env["NODE_PATH"] = os.pathsep.join(node_paths)
 
     result = subprocess.run(
-        ["node", "/tmp/create_transcript.js"],
+        [shutil.which("node") or "node", js_path],
         capture_output=True,
         text=True,
         env=node_env,
@@ -974,7 +1004,7 @@ def process_video(video_url: str, channel_name: str = "", language: str = "id") 
 
     # 3. Transcribe (Gemini handles long audio in a single call)
     print("\n  STEP 3: Transcribing audio...")
-    transcription = transcribe_audio(audio_path, language=language)
+    transcription = transcribe_audio_cached(audio_path, language=language)
     print(f"  ✓  Transcription complete ({len(transcription.get('segments', []))} segments)")
 
     # 4. Format transcript
@@ -998,7 +1028,7 @@ def process_video(video_url: str, channel_name: str = "", language: str = "id") 
 
     # Save summary as text too
     summary_path = os.path.join(SUMMARIES_DIR, f"Summary_{video_id}.md")
-    with open(summary_path, "w") as f:
+    with open(summary_path, "w", encoding="utf-8") as f:
         f.write(f"# {title}\n**Channel:** {channel}\n**URL:** {video_url}\n\n")
         f.write(f"## Email Summary\n{email_summary}\n\n")
         f.write(f"## Detailed Analysis\n{detailed_analysis}\n")

@@ -21,3 +21,7 @@ Thumbs.db
 # Transcripts are attached to email & uploaded as artifacts
 # Uncomment the next line if you don't want them in the repo:
 # output/transcripts/
+
+# Local-only secrets and cookies (never commit)
+secrets.bat
+cookies.txt

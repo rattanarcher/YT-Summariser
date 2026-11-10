@@ -78,7 +78,7 @@ def list_all_channel_videos(channel: str) -> list[dict]:
         "--dump-json",
         "--remote-components", "ejs:github",
     ]
-    cookies_path = os.getenv("YT_DLP_COOKIES", "")
+    cookies_path = os.getenv("YT_DLP_COOKIES", "") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "cookies.txt")
     if cookies_path and os.path.exists(cookies_path):
         cmd.extend(["--cookies", cookies_path])
     cmd.append(channel_url)
@@ -115,7 +115,7 @@ def list_all_channel_videos(channel: str) -> list[dict]:
 def load_progress() -> dict:
     if os.path.exists(PROGRESS_FILE):
         try:
-            with open(PROGRESS_FILE) as f:
+            with open(PROGRESS_FILE, encoding="utf-8") as f:
                 return json.load(f)
         except (json.JSONDecodeError, IOError):
             pass
@@ -124,7 +124,7 @@ def load_progress() -> dict:
 
 def save_progress(progress: dict):
     os.makedirs(os.path.dirname(PROGRESS_FILE), exist_ok=True)
-    with open(PROGRESS_FILE, "w") as f:
+    with open(PROGRESS_FILE, "w", encoding="utf-8") as f:
         json.dump(progress, f, indent=2, ensure_ascii=False)
 
 

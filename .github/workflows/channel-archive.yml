@@ -17,9 +17,10 @@
 name: Channel Archiver
 
 on:
-  schedule:
+  # schedule:
     # Daily at 18:00 UTC (04:00 AEST). Off-peak helps avoid Gemini busy spikes.
-    - cron: "0 18 * * *"
+    # Disabled: YouTube blocks GitHub IPs. Runs locally via run_archive.bat.
+    # - cron: "0 18 * * *"
 
   workflow_dispatch:
     inputs:
